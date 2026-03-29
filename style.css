@@ -1,192 +1,209 @@
-/* ===== DARK MODE THEME ===== */
-/* html[data-theme="dark"] prefix ensures higher specificity than Tailwind utility classes */
+:root {
+    --bg-main: #f8fafc; /* slate-50 */
+    --bg-nav: #ffffff;
+    --bg-section: #ffffff;
+    --bg-section-alt: #f1f5f9; /* slate-100 */
+    --text-primary: #0f172a; /* slate-900 */
+    --text-secondary: #475569; /* slate-600 */
+    --text-muted: #64748b; /* slate-500 */
+    --border-color: #e2e8f0; /* slate-200 */
+    --card-bg: #ffffff;
+    --form-bg: #f8fafc;
+    --input-bg: #ffffff;
+}
 
-/* ----- Base ----- */
-html[data-theme="dark"] body {
-    background-color: #0f172a !important;
-    color: #f1f5f9 !important;
+html[data-theme="dark"] {
+    --bg-main: #0f172a;
+    --bg-nav: #1e293b;
+    --bg-section: #1e293b;
+    --bg-section-alt: #0f172a;
+    --text-primary: #f1f5f9;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+    --border-color: #334155;
+    --card-bg: #1e293b;
+    --form-bg: #1e293b;
+    --input-bg: #0f172a;
+}
+
+/* ----- Base overrides ----- */
+body {
+    background-color: var(--bg-main) !important;
+    color: var(--text-primary) !important;
+    transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 /* ----- Navigation ----- */
-html[data-theme="dark"] nav {
-    background-color: #1e293b !important;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.4) !important;
+nav {
+    background-color: var(--bg-nav) !important;
+    transition: background-color 0.25s ease;
 }
 
-html[data-theme="dark"] nav .text-slate-800 {
-    color: #f1f5f9 !important;
+nav .text-slate-800,
+nav .text-2xl {
+    color: var(--text-primary) !important;
 }
 
-html[data-theme="dark"] nav ul a,
-html[data-theme="dark"] nav .text-slate-600 {
-    color: #94a3b8 !important;
+nav ul a,
+nav .text-slate-600 {
+    color: var(--text-secondary) !important;
 }
 
-html[data-theme="dark"] #theme-toggle {
-    color: #94a3b8 !important;
+#theme-toggle {
+    color: var(--text-secondary) !important;
 }
 
-/* ----- Sections (bg-white) ----- */
-html[data-theme="dark"] #about,
-html[data-theme="dark"] #products,
-html[data-theme="dark"] #contact {
-    background-color: #1e293b !important;
+/* ----- Sections ----- */
+#about,
+#products,
+#contact {
+    background-color: var(--bg-section) !important;
+    transition: background-color 0.25s ease;
 }
 
-/* ----- Drawings section (bg-slate-100) ----- */
-html[data-theme="dark"] #drawings {
-    background-color: #0f172a !important;
+#drawings,
+#location {
+    background-color: var(--bg-section-alt) !important;
+    transition: background-color 0.25s ease;
 }
 
-/* ----- Text colors ----- */
-html[data-theme="dark"] .text-slate-900 {
-    color: #f1f5f9 !important;
+/* ----- Typography ----- */
+.text-slate-900 {
+    color: var(--text-primary) !important;
+}
+
+.text-slate-800 {
+    color: var(--text-primary) !important;
+}
+
+.text-slate-600 {
+    color: var(--text-secondary) !important;
+}
+
+.text-slate-500 {
+    color: var(--text-muted) !important;
+}
+
+.text-slate-400 {
+    color: var(--text-muted) !important;
 }
 
 /* Exception: white-bg buttons with dark text (e.g. hero CTA) must stay dark */
-html[data-theme="dark"] .bg-white.text-slate-900 {
+.bg-white.text-slate-900 {
     color: #0f172a !important;
 }
 
-html[data-theme="dark"] .text-slate-800 {
-    color: #f1f5f9 !important;
-}
-
-html[data-theme="dark"] .text-slate-600 {
-    color: #94a3b8 !important;
-}
-
-html[data-theme="dark"] .text-slate-500 {
-    color: #64748b !important;
-}
-
-html[data-theme="dark"] .text-slate-400 {
-    color: #64748b !important;
-}
-
 /* ----- Product Cards ----- */
-html[data-theme="dark"] .group.border {
-    background-color: #1e293b !important;
-    border-color: #334155 !important;
+.group.border {
+    background-color: var(--card-bg) !important;
+    border-color: var(--border-color) !important;
+    transition: background-color 0.25s ease, border-color 0.25s ease;
 }
 
-html[data-theme="dark"] .group .bg-slate-100 {
-    background-color: #0f172a !important;
+.group .bg-slate-100 {
+    background-color: var(--bg-section-alt) !important;
+    transition: background-color 0.25s ease;
 }
 
-html[data-theme="dark"] .group h3 {
-    color: #f1f5f9 !important;
+button[data-product] {
+    background-color: var(--bg-section-alt) !important;
+    color: var(--text-primary) !important;
+    border-color: var(--border-color) !important;
+    transition: all 0.25s ease;
 }
 
-html[data-theme="dark"] .group ul li {
-    color: #94a3b8 !important;
-}
-
-html[data-theme="dark"] button[data-product] {
-    background-color: #0f172a !important;
-    color: #f1f5f9 !important;
-    border-color: #334155 !important;
-}
-
-html[data-theme="dark"] button[data-product]:hover {
-    background-color: #334155 !important;
+button[data-product]:hover {
+    background-color: var(--border-color) !important;
 }
 
 /* ----- Drawings Table ----- */
-html[data-theme="dark"] #drawings .bg-white {
-    background-color: #1e293b !important;
+#drawings .bg-white {
+    background-color: var(--bg-section) !important;
+}
+
+table tbody tr:hover {
+    background-color: rgba(30, 58, 95, 0.2) !important;
 }
 
 html[data-theme="dark"] table tbody tr:hover {
     background-color: #1e3a5f !important;
 }
 
-html[data-theme="dark"] table tbody td {
-    color: #f1f5f9 !important;
+table tbody td {
+    color: var(--text-primary) !important;
 }
 
-html[data-theme="dark"] table tbody tr {
-    border-color: #334155 !important;
+table tbody tr {
+    border-color: var(--border-color) !important;
 }
 
-/* ----- Contact Section ----- */
-html[data-theme="dark"] #contact p.text-lg.font-bold {
-    color: #f1f5f9 !important;
+/* ----- Contact Section & Form ----- */
+form.bg-slate-50 {
+    background-color: var(--form-bg) !important;
+    border-color: var(--border-color) !important;
 }
 
-/* ----- Form ----- */
-html[data-theme="dark"] form.bg-slate-50 {
-    background-color: #1e293b !important;
-    border-color: #334155 !important;
+form label {
+    color: var(--text-primary) !important;
 }
 
-html[data-theme="dark"] form label {
-    color: #f1f5f9 !important;
+form input,
+form textarea {
+    background-color: var(--input-bg) !important;
+    color: var(--text-primary) !important;
+    border-color: var(--border-color) !important;
+    transition: all 0.25s ease;
 }
 
-html[data-theme="dark"] form input,
-html[data-theme="dark"] form textarea {
-    background-color: #0f172a !important;
-    color: #f1f5f9 !important;
-    border-color: #334155 !important;
+form input::placeholder,
+form textarea::placeholder {
+    color: var(--text-muted) !important;
 }
 
-html[data-theme="dark"] form input::placeholder,
-html[data-theme="dark"] form textarea::placeholder {
-    color: #64748b !important;
+form button.bg-slate-900 {
+    background-color: #1e293b; /* slate-800 equivalent */
 }
 
 html[data-theme="dark"] form button.bg-slate-900 {
-    background-color: #334155 !important;
+    background-color: #334155;
 }
 
 html[data-theme="dark"] form button.bg-slate-900:hover {
-    background-color: #475569 !important;
+    background-color: #475569;
 }
 
 /* ----- Modal ----- */
-html[data-theme="dark"] #spec-modal > div {
-    background-color: #1e293b !important;
-    border-color: #334155 !important;
+#spec-modal > div {
+    background-color: var(--card-bg) !important;
+    border-color: var(--border-color) !important;
+    transition: background-color 0.25s ease, border-color 0.25s ease;
 }
 
-html[data-theme="dark"] #modal-title {
-    color: #f1f5f9 !important;
+#modal-title {
+    color: var(--text-primary) !important;
 }
 
-html[data-theme="dark"] #modal-content,
-html[data-theme="dark"] #modal-content p,
-html[data-theme="dark"] #modal-content li {
-    color: #94a3b8 !important;
+#modal-content,
+#modal-content p,
+#modal-content li {
+    color: var(--text-secondary) !important;
 }
 
-html[data-theme="dark"] #modal-content h4 {
-    color: #f1f5f9 !important;
+#modal-content h4 {
+    color: var(--text-primary) !important;
 }
 
-html[data-theme="dark"] #modal-close-button {
-    color: #94a3b8 !important;
+#modal-close-button {
+    color: var(--text-secondary) !important;
 }
 
-html[data-theme="dark"] #modal-close-button:hover {
-    color: #f1f5f9 !important;
+#modal-close-button:hover {
+    color: var(--text-primary) !important;
 }
 
 /* ----- Location Section ----- */
-html[data-theme="dark"] #location {
-    background-color: #0f172a !important;
-}
-
-html[data-theme="dark"] #location .bg-white {
-    background-color: #1e293b !important;
-}
-
-html[data-theme="dark"] #location .text-slate-800 {
-    color: #f1f5f9 !important;
-}
-
-html[data-theme="dark"] #location .text-slate-500 {
-    color: #64748b !important;
+#location .bg-white {
+    background-color: var(--bg-nav) !important;
 }
 
 /* ----- Hero gradient ----- */
@@ -195,7 +212,6 @@ html[data-theme="dark"] #location .text-slate-500 {
 }
 
 /* ----- Smooth transitions ----- */
-body,
 nav,
 section,
 .group.border,

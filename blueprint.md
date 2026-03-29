@@ -50,10 +50,11 @@ Key sections included:
 - **`index.html`:**
     - Added a hidden modal structure (`#spec-modal`) to the end of the `body` tag, styled with Tailwind CSS.
     - Modified all "상세 규격서 보기" buttons to include `data-product` attributes (e.g., `data-product="standard"`), linking them to specific product types.
-    - Included a `<script>` block at the end of the `body` to manage modal functionality:
-        - Stores detailed specification content for "standard", "double-arm", and "solar-smart" product types.
-        - Displays the modal, populates it with relevant content and title based on the clicked button's `data-product` attribute.
-        - Hides the modal when the close button or the overlay is clicked.
+- **`main.js`:**
+    - Stores detailed specification content for "standard", "double-arm", and "solar-smart" product types.
+    - Displays the modal, populates it with relevant content and title based on the clicked button's `data-product` attribute.
+    - Hides the modal when the close button or the overlay is clicked.
+    - (Refactored: Moved modal management from `index.html` script block to `main.js` for better organization.)
 
 #### Placeholder DWG/PDF for Drawings
 - **Created Files:**
@@ -62,14 +63,24 @@ Key sections included:
 - **`index.html`:**
     - Updated the `<a>` tags in the "도면 및 설계 자료실" table for the "기초 및 앵커" row to link to the new `.dwg` and `.pdf` files. Added `download` attribute to enable direct download.
 
-## Plan for Current Request: Add "회사소개" (About Us) Section
+#### Dark Mode Implementation
+- **`index.html`:**
+    - Added a theme toggle button to the navigation bar with moon/sun icons.
+    - Added `data-theme="light"` attribute to the `<html>` tag.
+- **`style.css`:**
+    - Implemented a comprehensive dark theme using CSS variables (`:root` and `html[data-theme="dark"]`).
+    - Applied variables to background colors, text colors, border colors, and component styles.
+    - Added smooth transitions for theme changes.
+- **`main.js`:**
+    - Implemented logic to detect system preference (`prefers-color-scheme: dark`) and load/save theme preference from `localStorage`.
+    - Added event listener to the toggle button to switch themes and update icons.
+- **`.idx/mcp.json`:**
+    - Configured Firebase server for MCP.
 
-### Objective
-Generate and insert content for the "회사소개" (About Us) section into `index.html`, making it accessible via the existing navigation link.
+## Future Plans
 
-### Steps
-1. **Locate Insertion Point:** Identified the ideal position within `index.html` for the new "About Us" section. This was before the existing `products` section.
-2. **Generate Content:** Created compelling Korean text for the "회사소개" section that introduces "주원테크," highlights its values, expertise in streetlight pole manufacturing, commitment to quality, and vision.
-3. **Insert Section:** Added a new `<section id="about">` block with the generated content into `index.html`. The content includes a main heading, a brief introduction, and details about the company's mission, vision, and values.
-4. **Verify Styling and Responsiveness:** Ensuring the new section integrates seamlessly with the existing Tailwind CSS styling and maintains responsiveness. (This step is considered done as part of the implementation and visual check).
-5. **Update blueprint.md:** Documented the added "About Us" section.
+### Enhancements
+- Implement a more robust contact form validation and submission logic.
+- Add an image gallery for completed projects.
+- Optimize images for faster loading.
+- Add more technical drawings and specifications to the drawings library.
