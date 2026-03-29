@@ -43,6 +43,11 @@ html[data-theme="dark"] .text-slate-900 {
     color: #f1f5f9 !important;
 }
 
+/* Exception: white-bg buttons with dark text (e.g. hero CTA) must stay dark */
+html[data-theme="dark"] .bg-white.text-slate-900 {
+    color: #0f172a !important;
+}
+
 html[data-theme="dark"] .text-slate-800 {
     color: #f1f5f9 !important;
 }
