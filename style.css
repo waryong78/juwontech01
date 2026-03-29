@@ -167,6 +167,23 @@ html[data-theme="dark"] #modal-close-button:hover {
     color: #f1f5f9 !important;
 }
 
+/* ----- Location Section ----- */
+html[data-theme="dark"] #location {
+    background-color: #0f172a !important;
+}
+
+html[data-theme="dark"] #location .bg-white {
+    background-color: #1e293b !important;
+}
+
+html[data-theme="dark"] #location .text-slate-800 {
+    color: #f1f5f9 !important;
+}
+
+html[data-theme="dark"] #location .text-slate-500 {
+    color: #64748b !important;
+}
+
 /* ----- Hero gradient ----- */
 .gradient-overlay {
     background: linear-gradient(to right, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.4));
