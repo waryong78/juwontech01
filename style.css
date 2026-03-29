@@ -1,1 +1,256 @@
-/* Add styles here */
+/* ===== CSS VARIABLES ===== */
+:root {
+    --bg-primary: #f8fafc;
+    --bg-secondary: #ffffff;
+    --bg-tertiary: #f1f5f9;
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --text-muted: #64748b;
+    --border-color: #e2e8f0;
+    --nav-bg: #ffffff;
+    --card-bg: #ffffff;
+    --card-inner-bg: #f1f5f9;
+    --form-bg: #f8fafc;
+    --input-bg: #ffffff;
+    --input-text: #0f172a;
+    --table-row-hover: #eff6ff;
+    --table-wrapper-bg: #ffffff;
+    --nav-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="dark"] {
+    --bg-primary: #0f172a;
+    --bg-secondary: #1e293b;
+    --bg-tertiary: #1e293b;
+    --text-primary: #f1f5f9;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+    --border-color: #334155;
+    --nav-bg: #1e293b;
+    --card-bg: #1e293b;
+    --card-inner-bg: #0f172a;
+    --form-bg: #1e293b;
+    --input-bg: #0f172a;
+    --input-text: #f1f5f9;
+    --table-row-hover: #1e3a5f;
+    --table-wrapper-bg: #1e293b;
+    --nav-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.4);
+}
+
+/* ===== BASE ===== */
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ===== NAVIGATION ===== */
+nav {
+    background-color: var(--nav-bg) !important;
+    box-shadow: var(--nav-shadow);
+    transition: background-color 0.3s ease;
+}
+
+nav .text-slate-800,
+nav span.text-slate-800 {
+    color: var(--text-primary);
+}
+
+nav ul a,
+nav .text-slate-600 {
+    color: var(--text-secondary);
+}
+
+/* ===== SECTIONS ===== */
+[data-theme="dark"] section.bg-white,
+[data-theme="dark"] #about.bg-white,
+[data-theme="dark"] #products.bg-white,
+[data-theme="dark"] #contact.bg-white {
+    background-color: var(--bg-secondary) !important;
+}
+
+[data-theme="dark"] section.bg-slate-100,
+[data-theme="dark"] #drawings.bg-slate-100 {
+    background-color: var(--bg-primary) !important;
+}
+
+/* ===== TEXT COLORS ===== */
+[data-theme="dark"] .text-slate-900 {
+    color: var(--text-primary) !important;
+}
+
+[data-theme="dark"] .text-slate-800 {
+    color: var(--text-primary) !important;
+}
+
+[data-theme="dark"] .text-slate-600 {
+    color: var(--text-secondary) !important;
+}
+
+[data-theme="dark"] .text-slate-500 {
+    color: var(--text-muted) !important;
+}
+
+[data-theme="dark"] .text-slate-400 {
+    color: var(--text-muted) !important;
+}
+
+/* ===== PRODUCT CARDS ===== */
+[data-theme="dark"] .group.border {
+    background-color: var(--card-bg);
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .group .bg-slate-100 {
+    background-color: var(--card-inner-bg) !important;
+}
+
+[data-theme="dark"] .group h3,
+[data-theme="dark"] .group .text-slate-700 {
+    color: var(--text-primary) !important;
+}
+
+[data-theme="dark"] .group ul.text-slate-500 li {
+    color: var(--text-secondary) !important;
+}
+
+/* Spec button inside cards */
+[data-theme="dark"] button[data-product] {
+    background-color: var(--card-inner-bg) !important;
+    color: var(--text-primary) !important;
+    border-color: var(--border-color) !important;
+}
+
+[data-theme="dark"] button[data-product]:hover {
+    background-color: var(--bg-primary) !important;
+}
+
+/* ===== DRAWINGS TABLE ===== */
+[data-theme="dark"] #drawings .bg-white {
+    background-color: var(--table-wrapper-bg) !important;
+}
+
+[data-theme="dark"] table tbody tr:hover {
+    background-color: var(--table-row-hover) !important;
+}
+
+[data-theme="dark"] table tbody td {
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] table tbody tr {
+    border-color: var(--border-color);
+}
+
+/* ===== CONTACT SECTION ===== */
+[data-theme="dark"] #contact .text-slate-900 {
+    color: var(--text-primary) !important;
+}
+
+[data-theme="dark"] #contact .text-slate-500 {
+    color: var(--text-secondary) !important;
+}
+
+[data-theme="dark"] #contact .text-slate-400 {
+    color: var(--text-muted) !important;
+}
+
+[data-theme="dark"] #contact p.text-lg.font-bold {
+    color: var(--text-primary) !important;
+}
+
+/* ===== FORM ===== */
+[data-theme="dark"] form.bg-slate-50 {
+    background-color: var(--form-bg) !important;
+    border-color: var(--border-color) !important;
+}
+
+[data-theme="dark"] form label {
+    color: var(--text-primary) !important;
+}
+
+[data-theme="dark"] form input,
+[data-theme="dark"] form textarea {
+    background-color: var(--input-bg) !important;
+    color: var(--input-text) !important;
+    border-color: var(--border-color) !important;
+}
+
+[data-theme="dark"] form input::placeholder,
+[data-theme="dark"] form textarea::placeholder {
+    color: var(--text-muted) !important;
+}
+
+/* Submit button */
+[data-theme="dark"] form button.bg-slate-900 {
+    background-color: #334155 !important;
+    color: #f1f5f9 !important;
+}
+
+[data-theme="dark"] form button.bg-slate-900:hover {
+    background-color: #475569 !important;
+}
+
+/* ===== MODAL ===== */
+[data-theme="dark"] #spec-modal > div {
+    background-color: var(--card-bg) !important;
+    border-color: var(--border-color) !important;
+}
+
+[data-theme="dark"] #spec-modal #modal-title {
+    color: var(--text-primary) !important;
+}
+
+[data-theme="dark"] #spec-modal #modal-content,
+[data-theme="dark"] #spec-modal #modal-content p,
+[data-theme="dark"] #spec-modal #modal-content li,
+[data-theme="dark"] #spec-modal #modal-content h4 {
+    color: var(--text-secondary) !important;
+}
+
+[data-theme="dark"] #spec-modal #modal-content h4 {
+    color: var(--text-primary) !important;
+}
+
+[data-theme="dark"] #modal-close-button {
+    color: var(--text-secondary) !important;
+}
+
+[data-theme="dark"] #modal-close-button:hover {
+    color: var(--text-primary) !important;
+}
+
+/* ===== ABOUT SECTION ===== */
+[data-theme="dark"] #about h3,
+[data-theme="dark"] #about h4 {
+    color: var(--text-primary) !important;
+}
+
+[data-theme="dark"] #about p {
+    color: var(--text-secondary) !important;
+}
+
+/* ===== HERO SECTION (unchanged) ===== */
+.gradient-overlay {
+    background: linear-gradient(to right, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.4));
+}
+
+[data-theme="dark"] .gradient-overlay {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.5));
+}
+
+/* ===== TOP BAR (always dark) ===== */
+.bg-slate-900.text-white.text-xs {
+    background-color: #0f172a !important;
+}
+
+/* ===== FOOTER (always dark) ===== */
+footer.bg-slate-900 {
+    background-color: #0f172a !important;
+}
+
+/* ===== TRANSITIONS ===== */
+nav, section, div, form, table, input, textarea, button {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
