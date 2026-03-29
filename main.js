@@ -1,3 +1,51 @@
+// --- i18n Translations ---
+const translations = {
+    ko: {
+        'topbar.badge': '조달청 우수제품 등록 기업',
+        'nav.about': '회사소개',
+        'nav.products': '제품소개',
+        'nav.drawings': '도면자료실',
+        'nav.contact': '온라인문의',
+        'nav.location': '찾아오는 길',
+        'nav.catalog': '카탈로그 받기',
+        'hero.title': '신뢰와 기술로 세우는<br>안전한 도시의 가로등',
+        'hero.subtitle': '"저희는 단순한 철제 기둥을 만드는 것이 아닙니다.\n                        엄격한 풍동 시험과 구조 계산을 통과한 안전을 공급합니다."',
+        'hero.btn1': '제품 라인업 보기',
+        'hero.btn2': 'DWG 도면함 이동',
+        'about.title': '회사소개',
+        'about.subtitle': '주원테크는 빛으로 도시를 밝힙니다',
+        'about.p1': '주원테크는 2005년 설립 이래, 혁신적인 기술과 끊임없는 연구 개발을 통해 대한민국 가로등주 산업을 선도해왔습니다. 우리는 단순한 조명 기구를 넘어, 도시의 미관과 안전을 책임지는 중요한 인프라를 구축한다는 자부심으로 모든 제품을 생산하고 있습니다.',
+        'about.p2': '최고 품질의 자재 사용과 엄격한 생산 공정, 그리고 숙련된 전문가들의 기술력으로 주원테크의 모든 가로등주는 뛰어난 내구성과 안정성을 자랑합니다. 우리는 고객의 다양한 요구와 환경적 특성을 고려한 맞춤형 솔루션을 제공하며, 지속 가능한 도시 환경 조성에 기여합니다.',
+        'about.qual.title': '품질 최우선',
+        'about.qual.desc': '모든 제품은 국내외 최고 기준을 준수합니다.',
+        'about.inno.title': '기술 혁신',
+        'about.inno.desc': '지속적인 R&D로 미래형 가로등주를 만듭니다.',
+        'products.title': '주력 제품 상세 사양',
+    },
+    en: {
+        'topbar.badge': 'Registered as Excellent Product – Public Procurement Service',
+        'nav.about': 'About Us',
+        'nav.products': 'Products',
+        'nav.drawings': 'Drawings',
+        'nav.contact': 'Contact',
+        'nav.location': 'Location',
+        'nav.catalog': 'Get Catalog',
+        'hero.title': 'Street Lights Built on<br>Trust and Technology',
+        'hero.subtitle': '"We don\'t just make steel poles.\n                        We deliver safety certified through rigorous wind tunnel tests and structural analysis."',
+        'hero.btn1': 'View Product Lineup',
+        'hero.btn2': 'Go to DWG Library',
+        'about.title': 'About Us',
+        'about.subtitle': 'Juwon Tech Illuminates the City',
+        'about.p1': 'Since its founding in 2005, Juwon Tech has led the Korean street light pole industry through innovative technology and continuous R&D. We take pride in building critical infrastructure that goes beyond simple lighting fixtures to ensure urban aesthetics and public safety.',
+        'about.p2': 'With the use of top-quality materials, strict production processes, and the expertise of skilled professionals, every Juwon Tech street light pole delivers outstanding durability and stability. We provide customized solutions tailored to diverse client needs and environmental conditions.',
+        'about.qual.title': 'Quality First',
+        'about.qual.desc': 'All products comply with the highest domestic and international standards.',
+        'about.inno.title': 'Technology Innovation',
+        'about.inno.desc': 'We create next-generation street light poles through continuous R&D.',
+        'products.title': 'Featured Product Specifications',
+    }
+};
+
 document.addEventListener('DOMContentLoaded', () => {
     // --- Theme Toggle Logic ---
     const htmlElement = document.documentElement;
@@ -30,6 +78,29 @@ document.addEventListener('DOMContentLoaded', () => {
         const currentTheme = htmlElement.getAttribute('data-theme');
         const newTheme = currentTheme === 'light' ? 'dark' : 'light';
         setTheme(newTheme);
+    });
+
+    // --- Language Toggle Logic ---
+    const langToggleBtn = document.getElementById('lang-toggle');
+    let currentLang = localStorage.getItem('lang') || 'ko';
+
+    const applyLang = (lang) => {
+        currentLang = lang;
+        localStorage.setItem('lang', lang);
+        langToggleBtn.textContent = lang === 'ko' ? 'EN' : 'KO';
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+            const key = el.getAttribute('data-i18n');
+            const text = translations[lang][key];
+            if (text !== undefined) {
+                el.innerHTML = text;
+            }
+        });
+    };
+
+    applyLang(currentLang);
+
+    langToggleBtn?.addEventListener('click', () => {
+        applyLang(currentLang === 'ko' ? 'en' : 'ko');
     });
 
     // --- Modal Logic ---
