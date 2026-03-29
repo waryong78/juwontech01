@@ -13,7 +13,7 @@
 
     <div class="bg-slate-900 text-white text-xs py-2 hidden md:block">
         <div class="container mx-auto px-6 flex justify-between">
-            <span><i class="fas fa-check-circle text-blue-400 mr-2"></i>조달청 우수제품 등록 기업</span>
+            <span><i class="fas fa-check-circle text-blue-400 mr-2"></i><span data-i18n="topbar.badge">조달청 우수제품 등록 기업</span></span>
             <div class="space-x-4">
                 <span><i class="fas fa-phone mr-1"></i> 055-332-9753</span>
                 <span><i class="fas fa-envelope mr-1"></i> info@juwon-tech.co.kr</span>
@@ -28,18 +28,19 @@
                 <span class="text-2xl font-black text-slate-800 tracking-tighter">주원테크</span>
             </div>
             <ul class="hidden lg:flex space-x-8 text-slate-600 font-bold">
-                <li><a href="#about" class="hover:text-blue-600">회사소개</a></li>
-                <li><a href="#products" class="hover:text-blue-600">제품소개</a></li>
-                <li><a href="#drawings" class="hover:text-blue-600">도면자료실</a></li>
-                <li><a href="#contact" class="hover:text-blue-600">온라인문의</a></li>
-                <li><a href="#location" class="hover:text-blue-600">찾아오는 길</a></li>
+                <li><a href="#about" class="hover:text-blue-600" data-i18n="nav.about">회사소개</a></li>
+                <li><a href="#products" class="hover:text-blue-600" data-i18n="nav.products">제품소개</a></li>
+                <li><a href="#drawings" class="hover:text-blue-600" data-i18n="nav.drawings">도면자료실</a></li>
+                <li><a href="#contact" class="hover:text-blue-600" data-i18n="nav.contact">온라인문의</a></li>
+                <li><a href="#location" class="hover:text-blue-600" data-i18n="nav.location">찾아오는 길</a></li>
             </ul>
             <div class="flex items-center space-x-4">
                 <button id="theme-toggle" class="text-slate-600 hover:text-blue-600 focus:outline-none text-xl">
                     <i class="fas fa-moon hidden" id="theme-toggle-dark-icon"></i>
                     <i class="fas fa-sun hidden" id="theme-toggle-light-icon"></i>
                 </button>
-                <button class="bg-blue-600 text-white px-5 py-2 rounded shadow-lg hover:bg-blue-700 transition">카탈로그 받기</button>
+                <button id="lang-toggle" class="text-sm font-bold px-3 py-1 border-2 border-slate-300 rounded-md text-slate-600 hover:border-blue-600 hover:text-blue-600 focus:outline-none transition">EN</button>
+                <button class="bg-blue-600 text-white px-5 py-2 rounded shadow-lg hover:bg-blue-700 transition" data-i18n="nav.catalog">카탈로그 받기</button>
             </div>
         </div>
     </nav>
@@ -50,14 +51,14 @@
             <div class="container mx-auto px-6">
                 <div class="max-w-2xl text-white">
                     <span class="inline-block bg-blue-600 px-3 py-1 text-sm font-bold mb-4 rounded-full">KOREA PREMIUM POLE</span>
-                    <h1 class="text-5xl font-extrabold leading-tight mb-6 text-white leading-normal">신뢰와 기술로 세우는<br>안전한 도시의 가로등</h1>
-                    <p class="text-xl text-slate-200 mb-8 leading-relaxed italic">
-                        "저희는 단순한 철제 기둥을 만드는 것이 아닙니다. 
+                    <h1 class="text-5xl font-extrabold leading-tight mb-6 text-white leading-normal" data-i18n="hero.title">신뢰와 기술로 세우는<br>안전한 도시의 가로등</h1>
+                    <p class="text-xl text-slate-200 mb-8 leading-relaxed italic" data-i18n="hero.subtitle">
+                        "저희는 단순한 철제 기둥을 만드는 것이 아닙니다.
                         엄격한 풍동 시험과 구조 계산을 통과한 안전을 공급합니다."
                     </p>
                     <div class="flex flex-wrap gap-4">
-                        <a href="#products" class="bg-white text-slate-900 px-8 py-3 rounded-md font-bold hover:bg-blue-50 transition">제품 라인업 보기</a>
-                        <a href="#drawings" class="border-2 border-white/50 text-white px-8 py-3 rounded-md font-bold hover:bg-white/10 transition">DWG 도면함 이동</a>
+                        <a href="#products" class="bg-white text-slate-900 px-8 py-3 rounded-md font-bold hover:bg-blue-50 transition" data-i18n="hero.btn1">제품 라인업 보기</a>
+                        <a href="#drawings" class="border-2 border-white/50 text-white px-8 py-3 rounded-md font-bold hover:bg-white/10 transition" data-i18n="hero.btn2">DWG 도면함 이동</a>
                     </div>
                 </div>
             </div>
@@ -67,7 +68,7 @@
     <section id="about" class="py-20 bg-white">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-slate-900 mb-4">회사소개</h2>
+                <h2 class="text-3xl font-bold text-slate-900 mb-4" data-i18n="about.title">회사소개</h2>
                 <div class="w-16 h-1 bg-blue-600 mx-auto"></div>
             </div>
             <div class="lg:flex items-center lg:space-x-12">
@@ -75,29 +76,29 @@
                     <img src="./strassenbeleuchtung.jpeg" alt="회사 전경" class="rounded-lg shadow-lg">
                 </div>
                 <div class="lg:w-1/2">
-                    <h3 class="text-2xl font-bold text-slate-800 mb-4">주원테크는 빛으로 도시를 밝힙니다</h3>
-                    <p class="text-slate-600 leading-relaxed mb-6">
-                        주원테크는 2005년 설립 이래, 혁신적인 기술과 끊임없는 연구 개발을 통해 
-                        대한민국 가로등주 산업을 선도해왔습니다. 우리는 단순한 조명 기구를 넘어, 
-                        도시의 미관과 안전을 책임지는 중요한 인프라를 구축한다는 자부심으로 
+                    <h3 class="text-2xl font-bold text-slate-800 mb-4" data-i18n="about.subtitle">주원테크는 빛으로 도시를 밝힙니다</h3>
+                    <p class="text-slate-600 leading-relaxed mb-6" data-i18n="about.p1">
+                        주원테크는 2005년 설립 이래, 혁신적인 기술과 끊임없는 연구 개발을 통해
+                        대한민국 가로등주 산업을 선도해왔습니다. 우리는 단순한 조명 기구를 넘어,
+                        도시의 미관과 안전을 책임지는 중요한 인프라를 구축한다는 자부심으로
                         모든 제품을 생산하고 있습니다.
                     </p>
-                    <p class="text-slate-600 leading-relaxed mb-6">
-                        최고 품질의 자재 사용과 엄격한 생산 공정, 그리고 숙련된 전문가들의 
-                        기술력으로 주원테크의 모든 가로등주는 뛰어난 내구성과 안정성을 
-                        자랑합니다. 우리는 고객의 다양한 요구와 환경적 특성을 고려한 
+                    <p class="text-slate-600 leading-relaxed mb-6" data-i18n="about.p2">
+                        최고 품질의 자재 사용과 엄격한 생산 공정, 그리고 숙련된 전문가들의
+                        기술력으로 주원테크의 모든 가로등주는 뛰어난 내구성과 안정성을
+                        자랑합니다. 우리는 고객의 다양한 요구와 환경적 특성을 고려한
                         맞춤형 솔루션을 제공하며, 지속 가능한 도시 환경 조성에 기여합니다.
                     </p>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
                         <div>
                             <i class="fas fa-medal text-blue-600 text-3xl mb-3"></i>
-                            <h4 class="text-xl font-semibold text-slate-800 mb-2">품질 최우선</h4>
-                            <p class="text-slate-600 text-sm">모든 제품은 국내외 최고 기준을 준수합니다.</p>
+                            <h4 class="text-xl font-semibold text-slate-800 mb-2" data-i18n="about.qual.title">품질 최우선</h4>
+                            <p class="text-slate-600 text-sm" data-i18n="about.qual.desc">모든 제품은 국내외 최고 기준을 준수합니다.</p>
                         </div>
                         <div>
                             <i class="fas fa-lightbulb text-blue-600 text-3xl mb-3"></i>
-                            <h4 class="text-xl font-semibold text-slate-800 mb-2">기술 혁신</h4>
-                            <p class="text-slate-600 text-sm">지속적인 R&D로 미래형 가로등주를 만듭니다.</p>
+                            <h4 class="text-xl font-semibold text-slate-800 mb-2" data-i18n="about.inno.title">기술 혁신</h4>
+                            <p class="text-slate-600 text-sm" data-i18n="about.inno.desc">지속적인 R&D로 미래형 가로등주를 만듭니다.</p>
                         </div>
                     </div>
                 </div>
@@ -108,7 +109,7 @@
     <section id="products" class="py-20 bg-white">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-slate-900 mb-4">주력 제품 상세 사양</h2>
+                <h2 class="text-3xl font-bold text-slate-900 mb-4" data-i18n="products.title">주력 제품 상세 사양</h2>
                 <div class="w-16 h-1 bg-blue-600 mx-auto"></div>
             </div>
 
