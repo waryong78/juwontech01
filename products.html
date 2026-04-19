@@ -68,6 +68,14 @@
         </div>
     </section>
 
+    <!-- 이미지 확대 미리보기 -->
+    <div id="img-preview" class="fixed z-50 pointer-events-none hidden" style="transition: opacity 0.15s ease;">
+        <div class="bg-white rounded-2xl shadow-2xl border border-slate-200 p-3" style="width:320px;">
+            <img id="img-preview-src" src="" alt="" class="w-full h-72 object-contain rounded-xl bg-slate-100">
+            <p id="img-preview-name" class="text-center text-sm font-bold text-slate-700 mt-2"></p>
+        </div>
+    </div>
+
     <footer class="bg-slate-900 text-slate-400 py-10">
         <div class="container mx-auto px-6 text-center text-sm">
             <p class="font-bold text-white mb-1">주원테크</p>
@@ -225,6 +233,34 @@ function renderTabs() {
     }).join('');
 }
 
+const preview = document.getElementById('img-preview');
+const previewImg = document.getElementById('img-preview-src');
+const previewName = document.getElementById('img-preview-name');
+
+function positionPreview(e) {
+    const pad = 16;
+    const pw = 336;
+    const ph = 340;
+    let x = e.clientX + pad;
+    let y = e.clientY - ph / 2;
+    if (x + pw > window.innerWidth) x = e.clientX - pw - pad;
+    if (y < pad) y = pad;
+    if (y + ph > window.innerHeight - pad) y = window.innerHeight - ph - pad;
+    preview.style.left = (x + window.scrollX) + 'px';
+    preview.style.top  = (y + window.scrollY) + 'px';
+}
+
+function showPreview(imgSrc, name, e) {
+    previewImg.src = imgSrc;
+    previewName.textContent = name;
+    preview.classList.remove('hidden');
+    positionPreview(e);
+}
+
+function hidePreview() {
+    preview.classList.add('hidden');
+}
+
 function renderProducts() {
     const filtered = activeCategory === '전체'
         ? products
@@ -234,7 +270,8 @@ function renderProducts() {
 
     document.getElementById('product-grid').innerHTML = filtered.map(p => `
         <div class="group border rounded-2xl overflow-hidden hover:border-blue-500 transition-all duration-300 shadow-sm hover:shadow-xl bg-white">
-            <div class="bg-slate-100 h-52 flex items-center justify-center p-6">
+            <div class="bg-slate-100 h-52 flex items-center justify-center p-6 cursor-zoom-in"
+                data-img="${p.image}" data-name="${p.name}">
                 <img
                     src="${p.image}"
                     alt="${p.name}"
@@ -251,6 +288,12 @@ function renderProducts() {
             </div>
         </div>
     `).join('');
+
+    document.querySelectorAll('#product-grid [data-img]').forEach(el => {
+        el.addEventListener('mouseenter', e => showPreview(el.dataset.img, el.dataset.name, e));
+        el.addEventListener('mousemove',  e => positionPreview(e));
+        el.addEventListener('mouseleave', hidePreview);
+    });
 }
 
 function setCategory(categoryId) {
