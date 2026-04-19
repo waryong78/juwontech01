@@ -237,24 +237,25 @@ const preview = document.getElementById('img-preview');
 const previewImg = document.getElementById('img-preview-src');
 const previewName = document.getElementById('img-preview-name');
 
-function positionPreview(e) {
-    const pad = 16;
-    const pw = 336;
-    const ph = 340;
-    let x = e.clientX + pad;
-    let y = e.clientY - ph / 2;
-    if (x + pw > window.innerWidth) x = e.clientX - pw - pad;
-    if (y < pad) y = pad;
-    if (y + ph > window.innerHeight - pad) y = window.innerHeight - ph - pad;
-    preview.style.left = (x + window.scrollX) + 'px';
-    preview.style.top  = (y + window.scrollY) + 'px';
-}
-
-function showPreview(imgSrc, name, e) {
+function showPreview(imgSrc, name, cardEl) {
     previewImg.src = imgSrc;
     previewName.textContent = name;
     preview.classList.remove('hidden');
-    positionPreview(e);
+
+    const rect = cardEl.closest('.group').getBoundingClientRect();
+    const pw = 336;
+    const ph = 340;
+    const pad = 12;
+
+    let x = rect.right + pad;
+    if (x + pw > window.innerWidth) x = rect.left - pw - pad;
+
+    let y = rect.top + window.scrollY + (rect.height / 2) - (ph / 2);
+    if (y < window.scrollY + pad) y = window.scrollY + pad;
+    if (y + ph > window.scrollY + window.innerHeight - pad) y = window.scrollY + window.innerHeight - ph - pad;
+
+    preview.style.left = (x + window.scrollX) + 'px';
+    preview.style.top  = y + 'px';
 }
 
 function hidePreview() {
@@ -290,7 +291,7 @@ function renderProducts() {
     `).join('');
 
     document.querySelectorAll('#product-grid [data-img]').forEach(el => {
-        el.addEventListener('mouseenter', e => showPreview(el.dataset.img, el.dataset.name, e));
+        el.addEventListener('mouseenter', () => showPreview(el.dataset.img, el.dataset.name, el));
         el.addEventListener('mouseleave', hidePreview);
     });
 }
