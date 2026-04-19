@@ -291,7 +291,6 @@ function renderProducts() {
 
     document.querySelectorAll('#product-grid [data-img]').forEach(el => {
         el.addEventListener('mouseenter', e => showPreview(el.dataset.img, el.dataset.name, e));
-        el.addEventListener('mousemove',  e => positionPreview(e));
         el.addEventListener('mouseleave', hidePreview);
     });
 }
