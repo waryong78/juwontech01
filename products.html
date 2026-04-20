@@ -87,76 +87,78 @@
 
 <script>
 const categories = [
-    { id: '전체', label: '전체' },
-    { id: '공원등', label: '공원등' },
-    { id: '공원등ARM', label: '공원등 ARM' },
-    { id: '라인바조명', label: '라인바조명' },
-    { id: '반딧불레이저', label: '반딧불레이저' },
-    { id: '벽부,스텝매입등', label: '벽부·스텝매입등' },
-    { id: '볼라드', label: '볼라드' },
-    { id: '열주등', label: '열주등' },
-    { id: '장미,갈대조명', label: '장미·갈대조명' },
-    { id: '지중매입등', label: '지중매입등' },
-    { id: '태양광', label: '태양광' },
-    { id: '투광등', label: '투광등' },
-    { id: '포인트조명', label: '포인트조명' },
-    { id: '횡단보도등', label: '횡단보도등' },
+    { id: '전체',      label: '전체' },
+    { id: '보안등주',  label: '보안등주' },
+    { id: '가로등주',  label: '가로등주' },
+    { id: '경관조명',  label: '경관조명' },
+    { id: '열주등',    label: '열주등' },
+    { id: '볼라드',    label: '볼라드' },
+    { id: '태양광가로등', label: '태양광가로등' },
 ];
 
 const products = [
-    // 공원등
-    { id: 'HK-PO-50',     name: 'HK-PO-50',     category: '공원등', image: './images/공원등/HK-PO-50.jpg' },
-    { id: 'HK-PO-60',     name: 'HK-PO-60',     category: '공원등', image: './images/공원등/HK-PO-60.png' },
-    { id: 'HK-PO-CS100',  name: 'HK-PO-CS100',  category: '공원등', image: './images/공원등/HK-PO-CS100.png' },
-    { id: 'HK-PO-GO60',   name: 'HK-PO-GO60',   category: '공원등', image: './images/공원등/HK-PO-GO60.jpg' },
-    { id: 'HK-PO-GO60A',  name: 'HK-PO-GO60A',  category: '공원등', image: './images/공원등/HK-PO-GO60A.jpg' },
-    { id: 'HK-PO-MR100',  name: 'HK-PO-MR100',  category: '공원등', image: './images/공원등/HK-PO-MR100.jpg' },
-    { id: 'HK-PO-MR50',   name: 'HK-PO-MR50',   category: '공원등', image: './images/공원등/HK-PO-MR50.jpg' },
-    { id: 'HK-PO-OG100',  name: 'HK-PO-OG100',  category: '공원등', image: './images/공원등/HK-PO-OG100.jpg' },
-    { id: 'HK-PO-OG50',   name: 'HK-PO-OG50',   category: '공원등', image: './images/공원등/HK-PO-OG50.jpg' },
-    { id: 'HK-PO-RS50R',  name: 'HK-PO-RS50R',  category: '공원등', image: './images/공원등/HK-PO-RS50R.jpg' },
-    { id: 'HK-PO-SQ50',   name: 'HK-PO-SQ50',   category: '공원등', image: './images/공원등/HK-PO-SQ50.jpg' },
-    { id: 'HK-PO-SQ50-1', name: 'HK-PO-SQ50-1', category: '공원등', image: './images/공원등/HK-PO-SQ50-1.jpg' },
-    { id: 'HK-PO-SQ50-2', name: 'HK-PO-SQ50-2', category: '공원등', image: './images/공원등/HK-PO-SQ50-2.jpg' },
-    { id: 'HK-PO-WJ60',   name: 'HK-PO-WJ60',   category: '공원등', image: './images/공원등/HK-PO-WJ60.jpg' },
-    { id: 'HK-PO-WJ60-1', name: 'HK-PO-WJ60-1', category: '공원등', image: './images/공원등/HK-PO-WJ60-1.jpg' },
-    { id: 'HK-PO-WJD50',  name: 'HK-PO-WJD50',  category: '공원등', image: './images/공원등/HK-PO-WJD50.jpg' },
-    { id: 'HK-PO-Z100',   name: 'HK-PO-Z100',   category: '공원등', image: './images/공원등/HK-PO-Z100.jpg' },
-    { id: 'HK-PO-Z50',    name: 'HK-PO-Z50',    category: '공원등', image: './images/공원등/HK-PO-Z50.jpg' },
+    // 보안등주 (투광등 + 횡단보도등)
+    { id: 'HK-FLC06',   name: 'HK-FLC06',   category: '보안등주', image: './images/투광등/HK-FLC06.jpg' },
+    { id: 'HK-FLC24',   name: 'HK-FLC24',   category: '보안등주', image: './images/투광등/HK-FLC24.jpg' },
+    { id: 'HK-FLC30',   name: 'HK-FLC30',   category: '보안등주', image: './images/투광등/HK-FLC30.jpg' },
+    { id: 'HK-FLC350',  name: 'HK-FLC350',  category: '보안등주', image: './images/투광등/HK-FLC350.jpg' },
+    { id: 'HK-FLC640',  name: 'HK-FLC640',  category: '보안등주', image: './images/투광등/HK-FLC640.jpg' },
+    { id: 'HK-FLC72',   name: 'HK-FLC72',   category: '보안등주', image: './images/투광등/HK-FLC72.jpg' },
+    { id: 'HK-G35',     name: 'HK-G35',     category: '보안등주', image: './images/투광등/HK-G35.jpg' },
+    { id: 'HK-SL100W',  name: 'HK-SL100W',  category: '보안등주', image: './images/투광등/HK-SL100W.jpg' },
+    { id: 'HK-SL150W',  name: 'HK-SL150W',  category: '보안등주', image: './images/투광등/HK-SL150W.jpg' },
+    { id: 'HK-SL-250W', name: 'HK-SL-250W', category: '보안등주', image: './images/투광등/HK-SL-250W.jpg' },
+    { id: 'HK-HB-R120',  name: 'HK-HB-R120',  category: '보안등주', image: './images/횡단보도등/HK-HB-R120.jpg' },
+    { id: 'HK-HB-R160',  name: 'HK-HB-R160',  category: '보안등주', image: './images/횡단보도등/HK-HB-R160.jpg' },
+    { id: 'HK-HB-R200',  name: 'HK-HB-R200',  category: '보안등주', image: './images/횡단보도등/HK-HB-R200.jpg' },
+    { id: 'HK-HB-R80',   name: 'HK-HB-R80',   category: '보안등주', image: './images/횡단보도등/HK-HB-R80.jpg' },
+    { id: 'HK-HB-SQ100', name: 'HK-HB-SQ100', category: '보안등주', image: './images/횡단보도등/HK-HB-SQ100.jpg' },
 
-    // 공원등ARM
-    { id: 'HK-OGA100', name: 'HK-OGA100', category: '공원등ARM', image: './images/공원등ARM/HK-OGA100.png' },
-    { id: 'HK-OGA50',  name: 'HK-OGA50',  category: '공원등ARM', image: './images/공원등ARM/HK-OGA50.png' },
+    // 가로등주 (공원등 + 공원등ARM)
+    { id: 'HK-PO-50',     name: 'HK-PO-50',     category: '가로등주', image: './images/공원등/HK-PO-50.jpg' },
+    { id: 'HK-PO-60',     name: 'HK-PO-60',     category: '가로등주', image: './images/공원등/HK-PO-60.png' },
+    { id: 'HK-PO-CS100',  name: 'HK-PO-CS100',  category: '가로등주', image: './images/공원등/HK-PO-CS100.png' },
+    { id: 'HK-PO-GO60',   name: 'HK-PO-GO60',   category: '가로등주', image: './images/공원등/HK-PO-GO60.jpg' },
+    { id: 'HK-PO-GO60A',  name: 'HK-PO-GO60A',  category: '가로등주', image: './images/공원등/HK-PO-GO60A.jpg' },
+    { id: 'HK-PO-MR100',  name: 'HK-PO-MR100',  category: '가로등주', image: './images/공원등/HK-PO-MR100.jpg' },
+    { id: 'HK-PO-MR50',   name: 'HK-PO-MR50',   category: '가로등주', image: './images/공원등/HK-PO-MR50.jpg' },
+    { id: 'HK-PO-OG100',  name: 'HK-PO-OG100',  category: '가로등주', image: './images/공원등/HK-PO-OG100.jpg' },
+    { id: 'HK-PO-OG50',   name: 'HK-PO-OG50',   category: '가로등주', image: './images/공원등/HK-PO-OG50.jpg' },
+    { id: 'HK-PO-RS50R',  name: 'HK-PO-RS50R',  category: '가로등주', image: './images/공원등/HK-PO-RS50R.jpg' },
+    { id: 'HK-PO-SQ50',   name: 'HK-PO-SQ50',   category: '가로등주', image: './images/공원등/HK-PO-SQ50.jpg' },
+    { id: 'HK-PO-SQ50-1', name: 'HK-PO-SQ50-1', category: '가로등주', image: './images/공원등/HK-PO-SQ50-1.jpg' },
+    { id: 'HK-PO-SQ50-2', name: 'HK-PO-SQ50-2', category: '가로등주', image: './images/공원등/HK-PO-SQ50-2.jpg' },
+    { id: 'HK-PO-WJ60',   name: 'HK-PO-WJ60',   category: '가로등주', image: './images/공원등/HK-PO-WJ60.jpg' },
+    { id: 'HK-PO-WJ60-1', name: 'HK-PO-WJ60-1', category: '가로등주', image: './images/공원등/HK-PO-WJ60-1.jpg' },
+    { id: 'HK-PO-WJD50',  name: 'HK-PO-WJD50',  category: '가로등주', image: './images/공원등/HK-PO-WJD50.jpg' },
+    { id: 'HK-PO-Z100',   name: 'HK-PO-Z100',   category: '가로등주', image: './images/공원등/HK-PO-Z100.jpg' },
+    { id: 'HK-PO-Z50',    name: 'HK-PO-Z50',    category: '가로등주', image: './images/공원등/HK-PO-Z50.jpg' },
+    { id: 'HK-OGA100',    name: 'HK-OGA100',    category: '가로등주', image: './images/공원등ARM/HK-OGA100.png' },
+    { id: 'HK-OGA50',     name: 'HK-OGA50',     category: '가로등주', image: './images/공원등ARM/HK-OGA50.png' },
 
-    // 라인바조명
-    { id: 'HK-B18',    name: 'HK-B18',    category: '라인바조명', image: './images/라인바조명/HK-B18.jpg' },
-    { id: 'HK-B36',    name: 'HK-B36',    category: '라인바조명', image: './images/라인바조명/HK-B36.jpg' },
-    { id: 'HK-B54',    name: 'HK-B54',    category: '라인바조명', image: './images/라인바조명/HK-B54.jpg' },
-    { id: 'HK-BO.5-7', name: 'HK-BO.5-7', category: '라인바조명', image: './images/라인바조명/HK-BO.5-7.jpg' },
-    { id: 'HK-BUGL15', name: 'HK-BUGL15', category: '라인바조명', image: './images/라인바조명/HK-BUGL15.jpg' },
-    { id: 'HK-HR70',   name: 'HK-HR70',   category: '라인바조명', image: './images/라인바조명/HK-HR70.jpg' },
-    { id: 'HK-MB12',   name: 'HK-MB12',   category: '라인바조명', image: './images/라인바조명/HK-MB12.jpg' },
-    { id: 'HK-MB15',   name: 'HK-MB15',   category: '라인바조명', image: './images/라인바조명/HK-MB15.jpg' },
-
-    // 반딧불레이저
-    { id: 'HK-LASER20', name: 'HK-LASER20', category: '반딧불레이저', image: './images/반딧불레이저/HK-LASER20.jpg' },
-
-    // 벽부,스텝매입등
-    { id: 'HK-BWL6', name: 'HK-BWL6', category: '벽부,스텝매입등', image: './images/벽부,스텝매입등/HK-BWL6.jpg' },
-    { id: 'HK-ST05', name: 'HK-ST05', category: '벽부,스텝매입등', image: './images/벽부,스텝매입등/HK-ST05.jpg' },
-
-    // 볼라드
-    { id: 'HK-BOL-AD15',     name: 'HK-BOL-AD15',     category: '볼라드', image: './images/볼라드/HK-BOL-AD15.jpg' },
-    { id: 'HK-BOL-AD15-1',   name: 'HK-BOL-AD15-1',   category: '볼라드', image: './images/볼라드/HK-BOL-AD15-1.jpg' },
-    { id: 'HK-BOL-AD15-2',   name: 'HK-BOL-AD15-2',   category: '볼라드', image: './images/볼라드/HK-BOL-AD15-2.jpg' },
-    { id: 'HK-BOL-AD30',     name: 'HK-BOL-AD30',     category: '볼라드', image: './images/볼라드/HK-BOL-AD30.jpg' },
-    { id: 'HK-BOL-SSQ13.5',  name: 'HK-BOL-SSQ13.5',  category: '볼라드', image: './images/볼라드/HK-BOL-SSQ13.5.jpg' },
-    { id: 'HK-BOL-SSQ30',    name: 'HK-BOL-SSQ30',    category: '볼라드', image: './images/볼라드/HK-BOL-SSQ30.jpg' },
-    { id: 'HK-BOL-SSR10.5',  name: 'HK-BOL-SSR10.5',  category: '볼라드', image: './images/볼라드/HK-BOL-SSR10.5.jpg' },
-    { id: 'HK-BOL-SSR20',    name: 'HK-BOL-SSR20',    category: '볼라드', image: './images/볼라드/HK-BOL-SSR20.jpg' },
-    { id: 'HK-BOL-WS10.5',   name: 'HK-BOL-WS10.5',   category: '볼라드', image: './images/볼라드/HK-BOL-WS10.5.jpg' },
-    { id: 'HK-BOL-WSQ13.5',  name: 'HK-BOL-WSQ13.5',  category: '볼라드', image: './images/볼라드/HK-BOL-WSQ13.5.jpg' },
-    { id: 'HK-BOL-WSQ13.5-1',name: 'HK-BOL-WSQ13.5-1',category: '볼라드', image: './images/볼라드/HK-BOL-WSQ13.5-1.jpg' },
+    // 경관조명 (라인바조명 + 반딧불레이저 + 벽부스텝매입등 + 장미갈대조명 + 지중매입등 + 포인트조명)
+    { id: 'HK-B18',       name: 'HK-B18',       category: '경관조명', image: './images/라인바조명/HK-B18.jpg' },
+    { id: 'HK-B36',       name: 'HK-B36',       category: '경관조명', image: './images/라인바조명/HK-B36.jpg' },
+    { id: 'HK-B54',       name: 'HK-B54',       category: '경관조명', image: './images/라인바조명/HK-B54.jpg' },
+    { id: 'HK-BO.5-7',    name: 'HK-BO.5-7',    category: '경관조명', image: './images/라인바조명/HK-BO.5-7.jpg' },
+    { id: 'HK-BUGL15',    name: 'HK-BUGL15',    category: '경관조명', image: './images/라인바조명/HK-BUGL15.jpg' },
+    { id: 'HK-HR70',      name: 'HK-HR70',      category: '경관조명', image: './images/라인바조명/HK-HR70.jpg' },
+    { id: 'HK-MB12',      name: 'HK-MB12',      category: '경관조명', image: './images/라인바조명/HK-MB12.jpg' },
+    { id: 'HK-MB15',      name: 'HK-MB15',      category: '경관조명', image: './images/라인바조명/HK-MB15.jpg' },
+    { id: 'HK-LASER20',   name: 'HK-LASER20',   category: '경관조명', image: './images/반딧불레이저/HK-LASER20.jpg' },
+    { id: 'HK-BWL6',      name: 'HK-BWL6',      category: '경관조명', image: './images/벽부,스텝매입등/HK-BWL6.jpg' },
+    { id: 'HK-ST05',      name: 'HK-ST05',      category: '경관조명', image: './images/벽부,스텝매입등/HK-ST05.jpg' },
+    { id: 'HK-LSR.24',    name: 'HK-LSR.24',    category: '경관조명', image: './images/장미,갈대조명/HK-LSR.24.jpg' },
+    { id: 'HK-LSR.72R',   name: 'HK-LSR.72R',   category: '경관조명', image: './images/장미,갈대조명/HK-LSR.72R.jpg' },
+    { id: 'HK-RL01',      name: 'HK-RL01',      category: '경관조명', image: './images/장미,갈대조명/HK-RL01.jpg' },
+    { id: 'HK-UGL05',     name: 'HK-UGL05',     category: '경관조명', image: './images/지중매입등/HK-UGL05.jpg' },
+    { id: 'HK-UGL06',     name: 'HK-UGL06',     category: '경관조명', image: './images/지중매입등/HK-UGL06.jpg' },
+    { id: 'HK-UGL12',     name: 'HK-UGL12',     category: '경관조명', image: './images/지중매입등/HK-UGL12.jpg' },
+    { id: 'HK-UGL24',     name: 'HK-UGL24',     category: '경관조명', image: './images/지중매입등/HK-UGL24.jpg' },
+    { id: 'HK-UGL36',     name: 'HK-UGL36',     category: '경관조명', image: './images/지중매입등/HK-UGL36.jpg' },
+    { id: 'HK-CL40-1.5',  name: 'HK-CL40-1.5',  category: '경관조명', image: './images/포인트조명/HK-CL40-1.5.jpg' },
+    { id: 'HK-PL09',      name: 'HK-PL09',      category: '경관조명', image: './images/포인트조명/HK-PL09.jpg' },
+    { id: 'HK-ST03',      name: 'HK-ST03',      category: '경관조명', image: './images/포인트조명/HK-ST03.jpg' },
 
     // 열주등
     { id: 'HK-J-DC51',  name: 'HK-J-DC51',  category: '열주등', image: './images/열주등/HK-J-DC51.jpg' },
@@ -166,47 +168,24 @@ const products = [
     { id: 'HK-J-NH90',  name: 'HK-J-NH90',  category: '열주등', image: './images/열주등/HK-J-NH90.jpg' },
     { id: '하트게이트',  name: '하트게이트',  category: '열주등', image: './images/열주등/하트게이트.jpg' },
 
-    // 장미,갈대조명
-    { id: 'HK-LSR.24',  name: 'HK-LSR.24',  category: '장미,갈대조명', image: './images/장미,갈대조명/HK-LSR.24.jpg' },
-    { id: 'HK-LSR.72R', name: 'HK-LSR.72R', category: '장미,갈대조명', image: './images/장미,갈대조명/HK-LSR.72R.jpg' },
-    { id: 'HK-RL01',    name: 'HK-RL01',    category: '장미,갈대조명', image: './images/장미,갈대조명/HK-RL01.jpg' },
+    // 볼라드
+    { id: 'HK-BOL-AD15',      name: 'HK-BOL-AD15',      category: '볼라드', image: './images/볼라드/HK-BOL-AD15.jpg' },
+    { id: 'HK-BOL-AD15-1',    name: 'HK-BOL-AD15-1',    category: '볼라드', image: './images/볼라드/HK-BOL-AD15-1.jpg' },
+    { id: 'HK-BOL-AD15-2',    name: 'HK-BOL-AD15-2',    category: '볼라드', image: './images/볼라드/HK-BOL-AD15-2.jpg' },
+    { id: 'HK-BOL-AD30',      name: 'HK-BOL-AD30',      category: '볼라드', image: './images/볼라드/HK-BOL-AD30.jpg' },
+    { id: 'HK-BOL-SSQ13.5',   name: 'HK-BOL-SSQ13.5',   category: '볼라드', image: './images/볼라드/HK-BOL-SSQ13.5.jpg' },
+    { id: 'HK-BOL-SSQ30',     name: 'HK-BOL-SSQ30',     category: '볼라드', image: './images/볼라드/HK-BOL-SSQ30.jpg' },
+    { id: 'HK-BOL-SSR10.5',   name: 'HK-BOL-SSR10.5',   category: '볼라드', image: './images/볼라드/HK-BOL-SSR10.5.jpg' },
+    { id: 'HK-BOL-SSR20',     name: 'HK-BOL-SSR20',     category: '볼라드', image: './images/볼라드/HK-BOL-SSR20.jpg' },
+    { id: 'HK-BOL-WS10.5',    name: 'HK-BOL-WS10.5',    category: '볼라드', image: './images/볼라드/HK-BOL-WS10.5.jpg' },
+    { id: 'HK-BOL-WSQ13.5',   name: 'HK-BOL-WSQ13.5',   category: '볼라드', image: './images/볼라드/HK-BOL-WSQ13.5.jpg' },
+    { id: 'HK-BOL-WSQ13.5-1', name: 'HK-BOL-WSQ13.5-1', category: '볼라드', image: './images/볼라드/HK-BOL-WSQ13.5-1.jpg' },
 
-    // 지중매입등
-    { id: 'HK-UGL05', name: 'HK-UGL05', category: '지중매입등', image: './images/지중매입등/HK-UGL05.jpg' },
-    { id: 'HK-UGL06', name: 'HK-UGL06', category: '지중매입등', image: './images/지중매입등/HK-UGL06.jpg' },
-    { id: 'HK-UGL12', name: 'HK-UGL12', category: '지중매입등', image: './images/지중매입등/HK-UGL12.jpg' },
-    { id: 'HK-UGL24', name: 'HK-UGL24', category: '지중매입등', image: './images/지중매입등/HK-UGL24.jpg' },
-    { id: 'HK-UGL36', name: 'HK-UGL36', category: '지중매입등', image: './images/지중매입등/HK-UGL36.jpg' },
-
-    // 태양광
-    { id: 'HK-PNISL-S-50', name: 'HK-PNISL-S-50', category: '태양광', image: './images/태양광/HK-PNISL-S-50.jpg' },
-    { id: 'HK-PNISL-S-60', name: 'HK-PNISL-S-60', category: '태양광', image: './images/태양광/HK-PNISL-S-60.jpg' },
-    { id: 'HK-S-50',       name: 'HK-S-50',       category: '태양광', image: './images/태양광/HK-S-50.jpg' },
-    { id: 'HK-S-60',       name: 'HK-S-60',       category: '태양광', image: './images/태양광/HK-S-60.jpg' },
-
-    // 투광등
-    { id: 'HK-FLC06',   name: 'HK-FLC06',   category: '투광등', image: './images/투광등/HK-FLC06.jpg' },
-    { id: 'HK-FLC24',   name: 'HK-FLC24',   category: '투광등', image: './images/투광등/HK-FLC24.jpg' },
-    { id: 'HK-FLC30',   name: 'HK-FLC30',   category: '투광등', image: './images/투광등/HK-FLC30.jpg' },
-    { id: 'HK-FLC350',  name: 'HK-FLC350',  category: '투광등', image: './images/투광등/HK-FLC350.jpg' },
-    { id: 'HK-FLC640',  name: 'HK-FLC640',  category: '투광등', image: './images/투광등/HK-FLC640.jpg' },
-    { id: 'HK-FLC72',   name: 'HK-FLC72',   category: '투광등', image: './images/투광등/HK-FLC72.jpg' },
-    { id: 'HK-G35',     name: 'HK-G35',     category: '투광등', image: './images/투광등/HK-G35.jpg' },
-    { id: 'HK-SL100W',  name: 'HK-SL100W',  category: '투광등', image: './images/투광등/HK-SL100W.jpg' },
-    { id: 'HK-SL150W',  name: 'HK-SL150W',  category: '투광등', image: './images/투광등/HK-SL150W.jpg' },
-    { id: 'HK-SL-250W', name: 'HK-SL-250W', category: '투광등', image: './images/투광등/HK-SL-250W.jpg' },
-
-    // 포인트조명
-    { id: 'HK-CL40-1.5', name: 'HK-CL40-1.5', category: '포인트조명', image: './images/포인트조명/HK-CL40-1.5.jpg' },
-    { id: 'HK-PL09',     name: 'HK-PL09',     category: '포인트조명', image: './images/포인트조명/HK-PL09.jpg' },
-    { id: 'HK-ST03',     name: 'HK-ST03',     category: '포인트조명', image: './images/포인트조명/HK-ST03.jpg' },
-
-    // 횡단보도등
-    { id: 'HK-HB-R120',  name: 'HK-HB-R120',  category: '횡단보도등', image: './images/횡단보도등/HK-HB-R120.jpg' },
-    { id: 'HK-HB-R160',  name: 'HK-HB-R160',  category: '횡단보도등', image: './images/횡단보도등/HK-HB-R160.jpg' },
-    { id: 'HK-HB-R200',  name: 'HK-HB-R200',  category: '횡단보도등', image: './images/횡단보도등/HK-HB-R200.jpg' },
-    { id: 'HK-HB-R80',   name: 'HK-HB-R80',   category: '횡단보도등', image: './images/횡단보도등/HK-HB-R80.jpg' },
-    { id: 'HK-HB-SQ100', name: 'HK-HB-SQ100', category: '횡단보도등', image: './images/횡단보도등/HK-HB-SQ100.jpg' },
+    // 태양광가로등
+    { id: 'HK-PNISL-S-50', name: 'HK-PNISL-S-50', category: '태양광가로등', image: './images/태양광/HK-PNISL-S-50.jpg' },
+    { id: 'HK-PNISL-S-60', name: 'HK-PNISL-S-60', category: '태양광가로등', image: './images/태양광/HK-PNISL-S-60.jpg' },
+    { id: 'HK-S-50',       name: 'HK-S-50',       category: '태양광가로등', image: './images/태양광/HK-S-50.jpg' },
+    { id: 'HK-S-60',       name: 'HK-S-60',       category: '태양광가로등', image: './images/태양광/HK-S-60.jpg' },
 ];
 
 let activeCategory = '전체';
