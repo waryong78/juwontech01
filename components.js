@@ -7,8 +7,10 @@
     if (topbarEl) {
         topbarEl.innerHTML = `
             <div class="bg-slate-900 text-white text-xs py-2 hidden md:block">
-                <div class="container mx-auto px-6 flex justify-end">
-                    <span><i class="fas fa-phone mr-1"></i> 055-332-9753</span>
+                <div class="container mx-auto px-6 flex justify-end items-center gap-5">
+                    <span><i class="fas fa-map-marker-alt mr-1"></i> 본사/공장: 경상남도 김해시 대동면 대동산단8로 79-12, 에이동</span>
+                    <span class="text-slate-500">|</span>
+                    <span><i class="fas fa-phone mr-1"></i> Tel: 055-321-9753 &nbsp;|&nbsp; Fax: 055-311-9753</span>
                 </div>
             </div>
         `;
@@ -50,7 +52,7 @@
                 <div class="container mx-auto px-6 text-center">
                     <div class="text-white font-bold text-xl mb-6">JUWON TECH</div>
                     <p class="mb-2">본사/공장: 경상남도 김해시 대동면 대동산단8로 79-12, 에이동</p>
-                    <p class="mb-2">Tel: 055-332-9753 | Fax: 055-331-9753</p>
+                    <p class="mb-2">Tel: 055-321-9753 | Fax: 055-311-9753</p>
                     <p class="mb-8">사업자등록번호: 736-72-00576 | 대표자: 주희룡</p>
                     <div class="flex justify-center space-x-6 text-xl">
                         <a href="#" class="hover:text-white"><i class="fab fa-facebook"></i></a>
