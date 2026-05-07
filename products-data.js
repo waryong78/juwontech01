@@ -94,14 +94,14 @@ const products = [
     { id: 'HK-BOL-WSQ13.5-1', name: 'HK-BOL-WSQ13.5-1', category: '볼라드', image: './images/볼라드/HK-BOL-WSQ13.5-1.jpg' },
 
     // 태양광가로등
-    { id: 'JW-SO165101',      name: 'JW-SO165101',  category: '태양광가로등', image: './images/태양광가로등/(1)JW-SO165101-30Li,30W,4m.png', drawing: './images/태양광가로등/JW-SO165101-drawing.jpg' },
+    { id: 'JW-SO165101',      name: 'JW-SO165101',  category: '태양광가로등', image: './images/태양광가로등/(1)JW-SO165101-30Li,30W,4m.png' },
     { id: 'JW-SO127',         name: 'JW-SO127',     category: '태양광가로등', image: './images/태양광가로등/(2)JW-SO127-50Li,50W,5m.png' },
     { id: 'JW-SO127G',        name: 'JW-SO127G',    category: '태양광가로등', image: './images/태양광가로등/(3)JW-SO127G-50Li,50W,5m.png' },
     { id: 'JW-SO165127',      name: 'JW-SO165127',  category: '태양광가로등', image: './images/태양광가로등/(4)JW-SO165127-50Li,50W,5m.png' },
-    { id: 'JW-SO216127-50W',  name: 'JW-SO216127',  category: '태양광가로등', image: './images/태양광가로등/(5)JW-SO216127-50Li,50W,5m.png' },
-    { id: 'JW-SO216127-60W',  name: 'JW-SO216127',  category: '태양광가로등', image: './images/태양광가로등/(6)JW-SO216127-60Li,60W,5m.png' },
+    { id: 'JW-SO216127-50W',  name: 'JW-SO216127',  category: '태양광가로등', image: './images/태양광가로등/(5)JW-SO216127-50Li,50W,5m.png', drawing: './images/태양광가로등/JW-SO216127-drawing.jpg' },
+    { id: 'JW-SO216127-60W',  name: 'JW-SO216127',  category: '태양광가로등', image: './images/태양광가로등/(6)JW-SO216127-60Li,60W,5m.png', drawing: './images/태양광가로등/JW-SO216127-drawing.jpg' },
     { id: 'JW-SO216127G-50W', name: 'JW-SO216127G', category: '태양광가로등', image: './images/태양광가로등/(7)JW-SO216127G-50Li,50W,5M.png' },
     { id: 'JW-SO216127G-60W', name: 'JW-SO216127G', category: '태양광가로등', image: './images/태양광가로등/(8)JW-SO216127G-60Li,60W,5M.png' },
-    { id: 'JW-SO216127-100W', name: 'JW-SO216127',  category: '태양광가로등', image: './images/태양광가로등/(9)JW-SO216127-100Li,100W,7m.png' },
+    { id: 'JW-SO216127-100W', name: 'JW-SO216127',  category: '태양광가로등', image: './images/태양광가로등/(9)JW-SO216127-100Li,100W,7m.png', drawing: './images/태양광가로등/JW-SO216127-drawing.jpg' },
     { id: 'example_01',       name: 'example_01',   category: '태양광가로등', image: './images/태양광가로등/example_01.png' },
 ];
