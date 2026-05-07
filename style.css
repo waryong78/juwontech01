@@ -56,7 +56,9 @@ nav .text-slate-600 {
 /* ----- Sections ----- */
 #about,
 #products,
-#contact {
+#contact,
+section.bg-white,
+section.bg-slate-50 {
     background-color: var(--bg-section) !important;
     transition: background-color 0.25s ease;
 }
