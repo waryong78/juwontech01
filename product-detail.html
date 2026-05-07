@@ -91,19 +91,6 @@
 <script src="components.js"></script>
 <script src="products-data.js"></script>
 <script>
-function parseProductSpecs(p) {
-    const specs = [];
-    if (p.category === '태양광가로등') {
-        const filename = p.image.split('/').pop();
-        const match = filename.match(/-(\d+)Li,(\d+)W,(\d+)[mM]/i);
-        if (match) {
-            specs.push({ icon: 'fas fa-battery-three-quarters', label: '배터리 용량', value: match[1] + 'Ah (리튬)' });
-            specs.push({ icon: 'fas fa-bolt',                   label: '소비전력',   value: match[2] + 'W' });
-            specs.push({ icon: 'fas fa-ruler-vertical',         label: '등주 높이',  value: match[3] + 'm' });
-        }
-    }
-    return specs;
-}
 
 const params = new URLSearchParams(location.search);
 const productId = decodeURIComponent(params.get('id') || '');
@@ -122,25 +109,9 @@ if (!p) {
     catEl.href = 'products.html?category=' + encodeURIComponent(p.category);
     document.getElementById('breadcrumb-name').textContent = p.name;
 
-    const specs = parseProductSpecs(p);
-    const specsEl = document.getElementById('detail-specs');
-    if (specs.length > 0) {
-        specsEl.innerHTML = specs.map(s => `
-            <div class="flex items-center gap-4 py-3 border-b border-slate-100 last:border-0">
-                <span class="text-blue-500 w-6 text-center text-lg flex-shrink-0">
-                    <i class="${s.icon}"></i>
-                </span>
-                <span class="text-slate-400 w-28 shrink-0 text-sm">${s.label}</span>
-                <span class="font-bold text-slate-800">${s.value}</span>
-            </div>
-        `).join('');
-    } else {
-        specsEl.innerHTML = `
-            <p class="text-slate-400 text-sm py-2 leading-relaxed">
-                상세 스펙은 문의를 통해 안내드립니다.
-            </p>
-        `;
-    }
+    document.getElementById('detail-specs').innerHTML = `
+        <p class="text-slate-400 text-sm py-2 leading-relaxed">상세 스펙은 문의를 통해 안내드립니다.</p>
+    `;
 
     // 같은 카테고리 제품 (현재 제품 제외, 최대 4개)
     const allRelated = products.filter(x => x.category === p.category && x.id !== p.id);
