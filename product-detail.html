@@ -49,8 +49,18 @@
                             <h1 id="detail-name" class="text-3xl font-bold text-slate-900 mb-2"></h1>
                             <div class="w-12 h-0.5 bg-blue-600 mb-6"></div>
 
-                            <!-- 스펙 테이블 -->
+                            <!-- 스펙 / 도면 -->
                             <div id="detail-specs"></div>
+                            <div id="detail-drawing" class="hidden mt-4">
+                                <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">제품 도면</p>
+                                <a id="drawing-link" href="#" target="_blank" rel="noopener noreferrer" class="block group">
+                                    <img id="drawing-img" src="" alt="제품 도면"
+                                        class="w-full rounded-lg border border-slate-200 group-hover:opacity-80 transition cursor-zoom-in">
+                                    <p class="text-xs text-blue-500 mt-1 text-right">
+                                        <i class="fas fa-search-plus mr-1"></i>클릭하여 크게 보기
+                                    </p>
+                                </a>
+                            </div>
                         </div>
 
                         <!-- 버튼 영역 -->
@@ -112,6 +122,12 @@ if (!p) {
     document.getElementById('detail-specs').innerHTML = `
         <p class="text-slate-400 text-sm py-2 leading-relaxed">상세 스펙은 문의를 통해 안내드립니다.</p>
     `;
+
+    if (p.drawing) {
+        document.getElementById('drawing-img').src = p.drawing;
+        document.getElementById('drawing-link').href = p.drawing;
+        document.getElementById('detail-drawing').classList.remove('hidden');
+    }
 
     // 같은 카테고리 제품 (현재 제품 제외, 최대 4개)
     const allRelated = products.filter(x => x.category === p.category && x.id !== p.id);

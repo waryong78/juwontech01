@@ -94,7 +94,7 @@ const products = [
     { id: 'HK-BOL-WSQ13.5-1', name: 'HK-BOL-WSQ13.5-1', category: '볼라드', image: './images/볼라드/HK-BOL-WSQ13.5-1.jpg' },
 
     // 태양광가로등
-    { id: 'JW-SO165101',      name: 'JW-SO165101',  category: '태양광가로등', image: './images/태양광가로등/(1)JW-SO165101-30Li,30W,4m.png' },
+    { id: 'JW-SO165101',      name: 'JW-SO165101',  category: '태양광가로등', image: './images/태양광가로등/(1)JW-SO165101-30Li,30W,4m.png', drawing: './images/태양광가로등/JW-SO165101-drawing.jpg' },
     { id: 'JW-SO127',         name: 'JW-SO127',     category: '태양광가로등', image: './images/태양광가로등/(2)JW-SO127-50Li,50W,5m.png' },
     { id: 'JW-SO127G',        name: 'JW-SO127G',    category: '태양광가로등', image: './images/태양광가로등/(3)JW-SO127G-50Li,50W,5m.png' },
     { id: 'JW-SO165127',      name: 'JW-SO165127',  category: '태양광가로등', image: './images/태양광가로등/(4)JW-SO165127-50Li,50W,5m.png' },
