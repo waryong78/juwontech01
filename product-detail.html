@@ -74,6 +74,13 @@
             <div class="mt-12">
                 <h2 class="text-lg font-bold text-slate-800 mb-5">같은 카테고리 제품</h2>
                 <div id="related-grid" class="grid grid-cols-2 md:grid-cols-4 gap-4"></div>
+                <div id="related-more" class="mt-6 hidden">
+                    <a id="related-more-link" href="products.html"
+                        class="inline-flex items-center space-x-2 px-6 py-3 border-2 border-blue-600 text-blue-600 font-bold rounded-lg hover:bg-blue-600 hover:text-white transition-all duration-200">
+                        <span>더보기</span>
+                        <span class="text-xl leading-none">+</span>
+                    </a>
+                </div>
             </div>
 
         </div>
@@ -135,22 +142,11 @@ if (!p) {
         `;
     }
 
-    // 같은 카테고리 제품 (현재 제품 제외, 최대 4개 + 더보기)
+    // 같은 카테고리 제품 (현재 제품 제외, 최대 4개)
     const allRelated = products.filter(x => x.category === p.category && x.id !== p.id);
     const related = allRelated.slice(0, 4);
     const relatedEl = document.getElementById('related-grid');
     if (related.length > 0) {
-        const moreCard = allRelated.length > 4 ? `
-            <a href="products.html?category=${encodeURIComponent(p.category)}"
-                class="group border-2 border-dashed border-slate-200 rounded-xl hover:border-blue-400 transition bg-white flex flex-col items-center justify-center gap-2 py-6">
-                <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center group-hover:bg-blue-600 transition">
-                    <i class="fas fa-arrow-right text-blue-600 group-hover:text-white transition"></i>
-                </div>
-                <p class="text-sm font-bold text-blue-600">더보기</p>
-                <p class="text-xs text-slate-400">${allRelated.length - 4}개 더</p>
-            </a>
-        ` : '';
-
         relatedEl.innerHTML = related.map(r => `
             <a href="product-detail.html?id=${encodeURIComponent(r.id)}"
                 class="group border rounded-xl overflow-hidden hover:border-blue-400 transition bg-white shadow-sm hover:shadow-md block">
@@ -165,7 +161,13 @@ if (!p) {
                     <p class="text-xs text-slate-400 mt-0.5">상세보기 →</p>
                 </div>
             </a>
-        `).join('') + moreCard;
+        `).join('');
+
+        if (allRelated.length > 4) {
+            const moreLink = document.getElementById('related-more-link');
+            moreLink.href = 'products.html?category=' + encodeURIComponent(p.category);
+            document.getElementById('related-more').classList.remove('hidden');
+        }
     } else {
         relatedEl.parentElement.style.display = 'none';
     }
