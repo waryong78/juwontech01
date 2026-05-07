@@ -117,6 +117,9 @@ function setCategory(categoryId) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
+const initCategory = new URLSearchParams(location.search).get('category');
+if (initCategory) activeCategory = initCategory;
+
 renderTabs();
 renderProducts();
 </script>
