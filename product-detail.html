@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제품 상세 | 주원테크</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-slate-50">
+
+    <div id="site-topbar"></div>
+    <div id="site-nav"></div>
+
+    <section class="py-12">
+        <div class="container mx-auto px-6 max-w-5xl">
+
+            <!-- 브레드크럼 -->
+            <nav class="flex items-center gap-2 text-sm text-slate-400 mb-8">
+                <a href="index.html" class="hover:text-blue-600 transition">홈</a>
+                <i class="fas fa-chevron-right text-xs"></i>
+                <a href="products.html" class="hover:text-blue-600 transition">전체 제품</a>
+                <i class="fas fa-chevron-right text-xs"></i>
+                <span id="breadcrumb-category" class="text-slate-500"></span>
+                <i class="fas fa-chevron-right text-xs"></i>
+                <span id="breadcrumb-name" class="text-slate-800 font-semibold"></span>
+            </nav>
+
+            <!-- 제품 상세 카드 -->
+            <div class="bg-white rounded-2xl shadow-sm overflow-hidden">
+                <div class="flex flex-col md:flex-row">
+
+                    <!-- 이미지 영역 -->
+                    <div class="bg-slate-100 md:w-1/2 flex items-center justify-center p-12" style="min-height: 420px;">
+                        <img id="detail-img" src="" alt=""
+                            class="max-h-96 max-w-full object-contain"
+                            onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22200%22><rect width=%22200%22 height=%22200%22 fill=%22%23e2e8f0%22/><text x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%2394a3b8%22 font-size=%2214%22>No Image</text></svg>'"
+                        >
+                    </div>
+
+                    <!-- 정보 영역 -->
+                    <div class="p-8 md:p-10 flex flex-col flex-1">
+                        <div class="flex-1">
+                            <span id="detail-category"
+                                class="inline-block bg-blue-100 text-blue-700 text-xs font-bold px-3 py-1 rounded-full mb-3">
+                            </span>
+                            <h1 id="detail-name" class="text-3xl font-bold text-slate-900 mb-2"></h1>
+                            <div class="w-12 h-0.5 bg-blue-600 mb-6"></div>
+
+                            <!-- 스펙 테이블 -->
+                            <div id="detail-specs"></div>
+                        </div>
+
+                        <!-- 버튼 영역 -->
+                        <div class="mt-8 space-y-3">
+                            <a href="index.html#contact"
+                                class="flex items-center justify-center gap-2 bg-blue-600 text-white font-bold py-4 rounded-xl hover:bg-blue-700 transition text-base">
+                                <i class="fas fa-headset"></i>
+                                제품 문의하기
+                            </a>
+                            <a href="products.html"
+                                class="flex items-center justify-center gap-2 bg-slate-100 text-slate-600 font-bold py-3 rounded-xl hover:bg-slate-200 transition text-sm">
+                                <i class="fas fa-arrow-left"></i>
+                                목록으로 돌아가기
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 같은 카테고리 다른 제품 -->
+            <div class="mt-12">
+                <h2 class="text-lg font-bold text-slate-800 mb-5">같은 카테고리 제품</h2>
+                <div id="related-grid" class="grid grid-cols-2 md:grid-cols-4 gap-4"></div>
+            </div>
+
+        </div>
+    </section>
+
+    <div id="site-footer"></div>
+
+<script src="components.js"></script>
+<script src="products-data.js"></script>
+<script>
+function parseProductSpecs(p) {
+    const specs = [];
+    if (p.category === '태양광가로등') {
+        const filename = p.image.split('/').pop();
+        const match = filename.match(/-(\d+)Li,(\d+)W,(\d+)[mM]/i);
+        if (match) {
+            specs.push({ icon: 'fas fa-battery-three-quarters', label: '배터리 용량', value: match[1] + 'Ah (리튬)' });
+            specs.push({ icon: 'fas fa-bolt',                   label: '소비전력',   value: match[2] + 'W' });
+            specs.push({ icon: 'fas fa-ruler-vertical',         label: '등주 높이',  value: match[3] + 'm' });
+        }
+    }
+    return specs;
+}
+
+const params = new URLSearchParams(location.search);
+const productId = decodeURIComponent(params.get('id') || '');
+const p = products.find(x => x.id === productId);
+
+if (!p) {
+    location.href = 'products.html';
+} else {
+    document.title = p.name + ' | 주원테크';
+    document.getElementById('detail-img').src = p.image;
+    document.getElementById('detail-img').alt = p.name;
+    document.getElementById('detail-category').textContent = p.category;
+    document.getElementById('detail-name').textContent = p.name;
+    document.getElementById('breadcrumb-category').textContent = p.category;
+    document.getElementById('breadcrumb-name').textContent = p.name;
+
+    const specs = parseProductSpecs(p);
+    const specsEl = document.getElementById('detail-specs');
+    if (specs.length > 0) {
+        specsEl.innerHTML = specs.map(s => `
+            <div class="flex items-center gap-4 py-3 border-b border-slate-100 last:border-0">
+                <span class="text-blue-500 w-6 text-center text-lg flex-shrink-0">
+                    <i class="${s.icon}"></i>
+                </span>
+                <span class="text-slate-400 w-28 shrink-0 text-sm">${s.label}</span>
+                <span class="font-bold text-slate-800">${s.value}</span>
+            </div>
+        `).join('');
+    } else {
+        specsEl.innerHTML = `
+            <p class="text-slate-400 text-sm py-2 leading-relaxed">
+                상세 스펙은 문의를 통해 안내드립니다.
+            </p>
+        `;
+    }
+
+    // 같은 카테고리 제품 (현재 제품 제외, 최대 4개)
+    const related = products.filter(x => x.category === p.category && x.id !== p.id).slice(0, 4);
+    const relatedEl = document.getElementById('related-grid');
+    if (related.length > 0) {
+        relatedEl.innerHTML = related.map(r => `
+            <a href="product-detail.html?id=${encodeURIComponent(r.id)}"
+                class="group border rounded-xl overflow-hidden hover:border-blue-400 transition bg-white shadow-sm hover:shadow-md block">
+                <div class="bg-slate-100 h-36 flex items-center justify-center p-4">
+                    <img src="${r.image}" alt="${r.name}"
+                        class="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300"
+                        onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22><rect width=%22100%22 height=%22100%22 fill=%22%23e2e8f0%22/><text x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%2394a3b8%22 font-size=%2212%22>No Image</text></svg>'"
+                    >
+                </div>
+                <div class="p-3">
+                    <p class="text-xs font-bold text-slate-700 truncate">${r.name}</p>
+                    <p class="text-xs text-slate-400 mt-0.5">상세보기 →</p>
+                </div>
+            </a>
+        `).join('');
+    } else {
+        relatedEl.parentElement.style.display = 'none';
+    }
+}
+</script>
+
+</body>
+</html>
