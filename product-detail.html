@@ -33,11 +33,15 @@
                 <div class="flex flex-col md:flex-row">
 
                     <!-- 이미지 영역 -->
-                    <div class="bg-slate-100 md:w-1/2 flex items-center justify-center p-12" style="min-height: 420px;">
+                    <div class="bg-slate-100 md:w-1/2 flex flex-col items-center justify-center p-8" style="min-height: 420px;">
                         <img id="detail-img" src="" alt=""
-                            class="max-h-96 max-w-full object-contain"
+                            class="max-h-80 max-w-full object-contain"
                             onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22200%22><rect width=%22200%22 height=%22200%22 fill=%22%23e2e8f0%22/><text x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%2394a3b8%22 font-size=%2214%22>No Image</text></svg>'"
                         >
+                        <!-- 갤러리 썸네일 (images 배열이 있을 때만 표시) -->
+                        <div id="gallery-thumbs" class="hidden mt-4 w-full">
+                            <div id="thumb-list" class="flex flex-wrap gap-2 justify-center"></div>
+                        </div>
                     </div>
 
                     <!-- 정보 영역 -->
@@ -98,6 +102,17 @@
 
     <div id="site-footer"></div>
 
+<script>
+function selectThumb(el, src) {
+    document.getElementById('detail-img').src = src;
+    document.querySelectorAll('#thumb-list img').forEach(t => {
+        t.classList.remove('border-blue-500');
+        t.classList.add('border-transparent');
+    });
+    el.classList.add('border-blue-500');
+    el.classList.remove('border-transparent');
+}
+</script>
 <script src="components.js"></script>
 <script src="products-data.js"></script>
 <script>
@@ -122,6 +137,22 @@ if (!p) {
     document.getElementById('detail-specs').innerHTML = `
         <p class="text-slate-400 text-sm py-2 leading-relaxed">상세 스펙은 문의를 통해 안내드립니다.</p>
     `;
+
+    // 이미지 갤러리
+    if (p.images && p.images.length > 1) {
+        const mainImg = document.getElementById('detail-img');
+        const thumbContainer = document.getElementById('gallery-thumbs');
+        const thumbList = document.getElementById('thumb-list');
+        thumbContainer.classList.remove('hidden');
+        thumbList.innerHTML = p.images.map((src, i) => `
+            <img src="${src}" alt="${p.name} ${i+1}"
+                class="h-14 w-14 object-contain bg-white rounded border-2 cursor-pointer transition
+                       ${i === 0 ? 'border-blue-500' : 'border-transparent hover:border-blue-300'}"
+                onclick="selectThumb(this, '${src}')"
+                onerror="this.style.display='none'"
+            >
+        `).join('');
+    }
 
     if (p.drawing) {
         document.getElementById('drawing-img').src = p.drawing;
