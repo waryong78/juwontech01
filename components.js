@@ -28,7 +28,7 @@
                     </a>
                     <ul class="hidden lg:flex space-x-8 text-slate-600 font-bold">
                         <li><a href="index.html#about"    class="hover:text-blue-600" data-i18n="nav.about">회사소개</a></li>
-                        <li><a href="index.html#products" class="hover:text-blue-600" data-i18n="nav.products">제품소개</a></li>
+                        <li><a href="products.html" class="hover:text-blue-600" data-i18n="nav.products">제품소개</a></li>
                         <li><a href="index.html#contact"  class="hover:text-blue-600" data-i18n="nav.contact">온라인문의</a></li>
                         <li><a href="index.html#location" class="hover:text-blue-600" data-i18n="nav.location">찾아오는 길</a></li>
                     </ul>
