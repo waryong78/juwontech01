@@ -28,7 +28,7 @@
                     </a>
                     <ul class="hidden lg:flex space-x-8 text-slate-600 font-bold">
                         <li><a href="index.html#about"    class="hover:text-blue-600" data-i18n="nav.about">회사소개</a></li>
-                        <li><a href="products.html" class="hover:text-blue-600" data-i18n="nav.products">제품소개</a></li>
+                        <li><a href="products.html"       class="hover:text-blue-600" data-i18n="nav.products">제품소개</a></li>
                         <li><a href="index.html#contact"  class="hover:text-blue-600" data-i18n="nav.contact">온라인문의</a></li>
                         <li><a href="index.html#location" class="hover:text-blue-600" data-i18n="nav.location">찾아오는 길</a></li>
                     </ul>
@@ -38,10 +38,39 @@
                             <i class="fas fa-circle-half-stroke hidden" id="theme-toggle-light-icon"></i>
                         </button>
                         <button id="lang-toggle" class="text-sm font-bold px-3 py-1 border-2 border-slate-300 rounded-md text-slate-600 hover:border-blue-600 hover:text-blue-600 focus:outline-none transition">EN</button>
+                        <button id="mobile-menu-btn" class="lg:hidden text-slate-600 hover:text-blue-600 focus:outline-none text-2xl">
+                            <i class="fas fa-bars"></i>
+                        </button>
                     </div>
+                </div>
+                <!-- 모바일 메뉴 -->
+                <div id="mobile-menu" class="hidden lg:hidden border-t border-slate-100 bg-white">
+                    <ul class="flex flex-col text-slate-600 font-bold">
+                        <li><a href="index.html#about"    class="block px-6 py-3 hover:bg-slate-50 hover:text-blue-600 border-b border-slate-100" data-i18n="nav.about">회사소개</a></li>
+                        <li><a href="products.html"       class="block px-6 py-3 hover:bg-slate-50 hover:text-blue-600 border-b border-slate-100" data-i18n="nav.products">제품소개</a></li>
+                        <li><a href="index.html#contact"  class="block px-6 py-3 hover:bg-slate-50 hover:text-blue-600 border-b border-slate-100" data-i18n="nav.contact">온라인문의</a></li>
+                        <li><a href="index.html#location" class="block px-6 py-3 hover:bg-slate-50 hover:text-blue-600" data-i18n="nav.location">찾아오는 길</a></li>
+                    </ul>
                 </div>
             </nav>
         `;
+
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.querySelector('#mobile-menu-btn i');
+            menu.classList.toggle('hidden');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('mobile-menu').classList.add('hidden');
+                const icon = document.querySelector('#mobile-menu-btn i');
+                icon.classList.add('fa-bars');
+                icon.classList.remove('fa-times');
+            });
+        });
     }
 
     // --- Footer ---
