@@ -1,6 +1,7 @@
 const categories = [
     { id: '전체',              label: '전체' },
     { id: '태양광가로등',      label: '태양광가로등' },
+    { id: '디자인등주',        label: '디자인등주' },
     { id: '가오스형(스텐기본)', label: '가오스형(스텐기본)' },
     { id: '글로브형(스텐기본)', label: '글로브형(스텐기본)' },
 ];
@@ -17,6 +18,19 @@ const products = [
     { id: 'JW-SO216127G-60W', name: 'JW-SO216127G', category: '태양광가로등', image: './images/태양광가로등/(8)JW-SO216127G-60Li,60W,5M.png' },
     { id: 'JW-SO216127-100W', name: 'JW-SO216127',  category: '태양광가로등', image: './images/태양광가로등/(9)JW-SO216127-100Li,100W,7m.png', drawing: './images/태양광가로등/JW-SO216127-drawing.jpg' },
     { id: 'example_01',       name: 'example_01',   category: '태양광가로등', image: './images/태양광가로등/example_01.png' },
+
+    // 디자인등주 — 렌더링(XX.png) + 환경사진(주원XX, 주원XX-1 등) 번호별 묶음
+    { id: '디자인등주-01', name: '디자인등주-01', category: '디자인등주', image: './images/3.디자인등주/01.png', images: ['./images/3.디자인등주/01.png', './images/3.디자인등주/주원01.png', './images/3.디자인등주/주원01-1.png'] },
+    { id: '디자인등주-02', name: '디자인등주-02', category: '디자인등주', image: './images/3.디자인등주/02.png', images: ['./images/3.디자인등주/02.png', './images/3.디자인등주/주원02.png', './images/3.디자인등주/주원02-1.png'] },
+    { id: '디자인등주-03', name: '디자인등주-03', category: '디자인등주', image: './images/3.디자인등주/03.png', images: ['./images/3.디자인등주/03.png', './images/3.디자인등주/주원03.png', './images/3.디자인등주/주원03-1.png'] },
+    { id: '디자인등주-04', name: '디자인등주-04', category: '디자인등주', image: './images/3.디자인등주/04.png', images: ['./images/3.디자인등주/04.png', './images/3.디자인등주/주원04.png', './images/3.디자인등주/주원04-1.png'] },
+    { id: '디자인등주-05', name: '디자인등주-05', category: '디자인등주', image: './images/3.디자인등주/05.png', images: ['./images/3.디자인등주/05.png', './images/3.디자인등주/주원05.png', './images/3.디자인등주/주원05-1.png', './images/3.디자인등주/주원05-2.png'] },
+    { id: '디자인등주-06', name: '디자인등주-06', category: '디자인등주', image: './images/3.디자인등주/06.png', images: ['./images/3.디자인등주/06.png', './images/3.디자인등주/주원06.png', './images/3.디자인등주/주원06-1.png'] },
+    { id: '디자인등주-07', name: '디자인등주-07', category: '디자인등주', image: './images/3.디자인등주/07.png', images: ['./images/3.디자인등주/07.png', './images/3.디자인등주/주원07.png', './images/3.디자인등주/주원07-1.png'] },
+    { id: '디자인등주-08', name: '디자인등주-08', category: '디자인등주', image: './images/3.디자인등주/08.png', images: ['./images/3.디자인등주/08.png', './images/3.디자인등주/주원08.png', './images/3.디자인등주/주원08-1.png'] },
+    { id: '디자인등주-09', name: '디자인등주-09', category: '디자인등주', image: './images/3.디자인등주/09.png', images: ['./images/3.디자인등주/09.png', './images/3.디자인등주/주원09.png', './images/3.디자인등주/주원09-1.png'] },
+    { id: '디자인등주-10', name: '디자인등주-10', category: '디자인등주', image: './images/3.디자인등주/10.png', images: ['./images/3.디자인등주/10.png', './images/3.디자인등주/주원10.png', './images/3.디자인등주/주원10-1.png'] },
+    { id: '디자인등주-11', name: '디자인등주-11', category: '디자인등주', image: './images/3.디자인등주/11.png', images: ['./images/3.디자인등주/11.png', './images/3.디자인등주/주원11.png', './images/3.디자인등주/주원11-1.png'] },
 
     // 가오스형(스텐기본) — JW-P-XX + 주원XX 쌍으로 10개 제품
     { id: 'JW-P-01', name: 'JW-P-01', category: '가오스형(스텐기본)', image: './images/가오스형(스텐기본)/JW-P-01.png', images: ['./images/가오스형(스텐기본)/JW-P-01.png', './images/가오스형(스텐기본)/주원01.png'] },
