@@ -3,7 +3,7 @@ const categories = [
     { id: '태양광가로등',      label: '태양광가로등' },
     { id: '디자인등주',        label: '디자인등주' },
     { id: '스텐보안등주', label: '스텐보안등주' },
-    { id: '글로브형(스텐기본)', label: '글로브형(스텐기본)' },
+    { id: '스텐보안등주(글로브형)', label: '스텐보안등주(글로브형)' },
 ];
 
 const products = [
@@ -44,15 +44,15 @@ const products = [
     { id: 'JW-P-09', name: 'JW-P-09', category: '스텐보안등주', image: './images/스텐보안등주/JW-P-09.png', images: ['./images/스텐보안등주/JW-P-09.png', './images/스텐보안등주/주원09.png'] },
     { id: 'JW-P-10', name: 'JW-P-10', category: '스텐보안등주', image: './images/스텐보안등주/JW-P-10.png', images: ['./images/스텐보안등주/JW-P-10.png', './images/스텐보안등주/주원10.png'] },
 
-    // 글로브형(스텐기본) — JW-PG-XX + 주원XX 쌍으로 10개 제품
-    { id: 'JW-PG-01', name: 'JW-PG-01', category: '글로브형(스텐기본)', image: './images/글로브형(스텐기본)/JW-PG-01.png', images: ['./images/글로브형(스텐기본)/JW-PG-01.png', './images/글로브형(스텐기본)/주원01.png'] },
-    { id: 'JW-PG-02', name: 'JW-PG-02', category: '글로브형(스텐기본)', image: './images/글로브형(스텐기본)/JW-PG-02.png', images: ['./images/글로브형(스텐기본)/JW-PG-02.png', './images/글로브형(스텐기본)/주원02.png'] },
-    { id: 'JW-PG-03', name: 'JW-PG-03', category: '글로브형(스텐기본)', image: './images/글로브형(스텐기본)/JW-PG-03.png', images: ['./images/글로브형(스텐기본)/JW-PG-03.png', './images/글로브형(스텐기본)/주원03.png'] },
-    { id: 'JW-PG-04', name: 'JW-PG-04', category: '글로브형(스텐기본)', image: './images/글로브형(스텐기본)/JW-PG-04.png', images: ['./images/글로브형(스텐기본)/JW-PG-04.png', './images/글로브형(스텐기본)/주원04.png'] },
-    { id: 'JW-PG-05', name: 'JW-PG-05', category: '글로브형(스텐기본)', image: './images/글로브형(스텐기본)/JW-PG-05.png', images: ['./images/글로브형(스텐기본)/JW-PG-05.png', './images/글로브형(스텐기본)/주원05.png'] },
-    { id: 'JW-PG-06', name: 'JW-PG-06', category: '글로브형(스텐기본)', image: './images/글로브형(스텐기본)/JW-PG-06.png', images: ['./images/글로브형(스텐기본)/JW-PG-06.png', './images/글로브형(스텐기본)/주원06.png'] },
-    { id: 'JW-PG-07', name: 'JW-PG-07', category: '글로브형(스텐기본)', image: './images/글로브형(스텐기본)/JW-PG-07.png', images: ['./images/글로브형(스텐기본)/JW-PG-07.png', './images/글로브형(스텐기본)/주원07.png'] },
-    { id: 'JW-PG-08', name: 'JW-PG-08', category: '글로브형(스텐기본)', image: './images/글로브형(스텐기본)/JW-PG-08.png', images: ['./images/글로브형(스텐기본)/JW-PG-08.png', './images/글로브형(스텐기본)/주원08.png'] },
-    { id: 'JW-PG-09', name: 'JW-PG-09', category: '글로브형(스텐기본)', image: './images/글로브형(스텐기본)/JW-PG-09.png', images: ['./images/글로브형(스텐기본)/JW-PG-09.png', './images/글로브형(스텐기본)/주원09.png'] },
-    { id: 'JW-PG-10', name: 'JW-PG-10', category: '글로브형(스텐기본)', image: './images/글로브형(스텐기본)/JW-PG-10.png', images: ['./images/글로브형(스텐기본)/JW-PG-10.png', './images/글로브형(스텐기본)/주원10.png'] },
+    // 스텐보안등주(글로브형) — JW-PG-XX + 주원XX 쌍으로 10개 제품
+    { id: 'JW-PG-01', name: 'JW-PG-01', category: '스텐보안등주(글로브형)', image: './images/스텐보안등주(글로브형)/JW-PG-01.png', images: ['./images/스텐보안등주(글로브형)/JW-PG-01.png', './images/스텐보안등주(글로브형)/주원01.png'] },
+    { id: 'JW-PG-02', name: 'JW-PG-02', category: '스텐보안등주(글로브형)', image: './images/스텐보안등주(글로브형)/JW-PG-02.png', images: ['./images/스텐보안등주(글로브형)/JW-PG-02.png', './images/스텐보안등주(글로브형)/주원02.png'] },
+    { id: 'JW-PG-03', name: 'JW-PG-03', category: '스텐보안등주(글로브형)', image: './images/스텐보안등주(글로브형)/JW-PG-03.png', images: ['./images/스텐보안등주(글로브형)/JW-PG-03.png', './images/스텐보안등주(글로브형)/주원03.png'] },
+    { id: 'JW-PG-04', name: 'JW-PG-04', category: '스텐보안등주(글로브형)', image: './images/스텐보안등주(글로브형)/JW-PG-04.png', images: ['./images/스텐보안등주(글로브형)/JW-PG-04.png', './images/스텐보안등주(글로브형)/주원04.png'] },
+    { id: 'JW-PG-05', name: 'JW-PG-05', category: '스텐보안등주(글로브형)', image: './images/스텐보안등주(글로브형)/JW-PG-05.png', images: ['./images/스텐보안등주(글로브형)/JW-PG-05.png', './images/스텐보안등주(글로브형)/주원05.png'] },
+    { id: 'JW-PG-06', name: 'JW-PG-06', category: '스텐보안등주(글로브형)', image: './images/스텐보안등주(글로브형)/JW-PG-06.png', images: ['./images/스텐보안등주(글로브형)/JW-PG-06.png', './images/스텐보안등주(글로브형)/주원06.png'] },
+    { id: 'JW-PG-07', name: 'JW-PG-07', category: '스텐보안등주(글로브형)', image: './images/스텐보안등주(글로브형)/JW-PG-07.png', images: ['./images/스텐보안등주(글로브형)/JW-PG-07.png', './images/스텐보안등주(글로브형)/주원07.png'] },
+    { id: 'JW-PG-08', name: 'JW-PG-08', category: '스텐보안등주(글로브형)', image: './images/스텐보안등주(글로브형)/JW-PG-08.png', images: ['./images/스텐보안등주(글로브형)/JW-PG-08.png', './images/스텐보안등주(글로브형)/주원08.png'] },
+    { id: 'JW-PG-09', name: 'JW-PG-09', category: '스텐보안등주(글로브형)', image: './images/스텐보안등주(글로브형)/JW-PG-09.png', images: ['./images/스텐보안등주(글로브형)/JW-PG-09.png', './images/스텐보안등주(글로브형)/주원09.png'] },
+    { id: 'JW-PG-10', name: 'JW-PG-10', category: '스텐보안등주(글로브형)', image: './images/스텐보안등주(글로브형)/JW-PG-10.png', images: ['./images/스텐보안등주(글로브형)/JW-PG-10.png', './images/스텐보안등주(글로브형)/주원10.png'] },
 ];
