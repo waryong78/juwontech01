@@ -5,6 +5,7 @@ const categories = [
     { id: 'STEEL 보안등주',   label: 'STEEL 보안등주' },
     { id: '철보안등주',       label: '철보안등주' },
     { id: '골프장가로등',     label: '골프장가로등' },
+    { id: '잔디등',          label: '잔디등' },
     { id: '스텐보안등주', label: '스텐보안등주' },
     { id: '스텐보안등주(글로브형)', label: '스텐보안등주(글로브형)' },
 ];
@@ -21,6 +22,11 @@ const products = [
     { id: 'JW-SO216127G-60W', name: 'JW-SO216127G', category: '태양광가로등', image: './images/태양광가로등/(8)JW-SO216127G-60Li,60W,5M.png' },
     { id: 'JW-SO216127-100W', name: 'JW-SO216127',  category: '태양광가로등', image: './images/태양광가로등/(9)JW-SO216127-100Li,100W,7m.png', drawing: './images/태양광가로등/JW-SO216127-drawing.jpg' },
     { id: 'example_01',       name: 'example_01',   category: '태양광가로등', image: './images/태양광가로등/example_01.png' },
+
+    // 잔디등
+    { id: '잔디등-01', name: '잔디등-01', category: '잔디등', image: './images/잔디등/01.png', images: ['./images/잔디등/01.png', './images/잔디등/주원01.png'] },
+    { id: '잔디등-02', name: '잔디등-02', category: '잔디등', image: './images/잔디등/02.png', images: ['./images/잔디등/02.png', './images/잔디등/주원02.png'] },
+    { id: '잔디등-03', name: '잔디등-03', category: '잔디등', image: './images/잔디등/03.png', images: ['./images/잔디등/03.png', './images/잔디등/주원03.png'] },
 
     // 골프장가로등
     { id: '골프장가로등-01', name: '골프장가로등-01', category: '골프장가로등', image: './images/골프장가로등/1.png' },
