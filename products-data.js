@@ -4,6 +4,7 @@ const categories = [
     { id: '디자인등주',        label: '디자인등주' },
     { id: 'STEEL 보안등주',   label: 'STEEL 보안등주' },
     { id: '철보안등주',       label: '철보안등주' },
+    { id: '골프장가로등',     label: '골프장가로등' },
     { id: '스텐보안등주', label: '스텐보안등주' },
     { id: '스텐보안등주(글로브형)', label: '스텐보안등주(글로브형)' },
 ];
@@ -20,6 +21,13 @@ const products = [
     { id: 'JW-SO216127G-60W', name: 'JW-SO216127G', category: '태양광가로등', image: './images/태양광가로등/(8)JW-SO216127G-60Li,60W,5M.png' },
     { id: 'JW-SO216127-100W', name: 'JW-SO216127',  category: '태양광가로등', image: './images/태양광가로등/(9)JW-SO216127-100Li,100W,7m.png', drawing: './images/태양광가로등/JW-SO216127-drawing.jpg' },
     { id: 'example_01',       name: 'example_01',   category: '태양광가로등', image: './images/태양광가로등/example_01.png' },
+
+    // 골프장가로등
+    { id: '골프장가로등-01', name: '골프장가로등-01', category: '골프장가로등', image: './images/골프장가로등/1.png' },
+    { id: '골프장가로등-02', name: '골프장가로등-02', category: '골프장가로등', image: './images/골프장가로등/2.png' },
+    { id: '골프장가로등-03', name: '골프장가로등-03', category: '골프장가로등', image: './images/골프장가로등/3.png' },
+    { id: '골프장가로등-04', name: '골프장가로등-04', category: '골프장가로등', image: './images/골프장가로등/4.png' },
+    { id: '골프장가로등-05', name: '골프장가로등-05', category: '골프장가로등', image: './images/골프장가로등/5.png' },
 
     // 철보안등주
     { id: 'JW-P-ST01', name: 'JW-P-ST01', category: '철보안등주', image: './images/철보안등주/JW-P-ST01.png' },
