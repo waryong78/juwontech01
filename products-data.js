@@ -3,6 +3,7 @@ const categories = [
     { id: '태양광가로등',      label: '태양광가로등' },
     { id: '디자인등주',        label: '디자인등주' },
     { id: 'STEEL 보안등주',   label: 'STEEL 보안등주' },
+    { id: '철보안등주',       label: '철보안등주' },
     { id: '스텐보안등주', label: '스텐보안등주' },
     { id: '스텐보안등주(글로브형)', label: '스텐보안등주(글로브형)' },
 ];
@@ -19,6 +20,10 @@ const products = [
     { id: 'JW-SO216127G-60W', name: 'JW-SO216127G', category: '태양광가로등', image: './images/태양광가로등/(8)JW-SO216127G-60Li,60W,5M.png' },
     { id: 'JW-SO216127-100W', name: 'JW-SO216127',  category: '태양광가로등', image: './images/태양광가로등/(9)JW-SO216127-100Li,100W,7m.png', drawing: './images/태양광가로등/JW-SO216127-drawing.jpg' },
     { id: 'example_01',       name: 'example_01',   category: '태양광가로등', image: './images/태양광가로등/example_01.png' },
+
+    // 철보안등주
+    { id: 'JW-P-ST01', name: 'JW-P-ST01', category: '철보안등주', image: './images/철보안등주/JW-P-ST01.png' },
+    { id: 'JW-P-ST02', name: 'JW-P-ST02', category: '철보안등주', image: './images/철보안등주/JW-P-ST02.png' },
 
     // 디자인등주 — 렌더링(XX.png) + 환경사진(주원XX, 주원XX-1 등) 번호별 묶음
     { id: '디자인등주-01', name: '디자인등주-01', category: '디자인등주', image: './images/3.디자인등주/01.png', images: ['./images/3.디자인등주/01.png', './images/3.디자인등주/주원01.png', './images/3.디자인등주/주원01-1.png'] },
