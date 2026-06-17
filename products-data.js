@@ -2,6 +2,7 @@ const categories = [
     { id: '전체',              label: '전체' },
     { id: '태양광가로등',      label: '태양광가로등' },
     { id: '디자인등주',        label: '디자인등주' },
+    { id: 'STEEL 보안등주',   label: 'STEEL 보안등주' },
     { id: '스텐보안등주', label: '스텐보안등주' },
     { id: '스텐보안등주(글로브형)', label: '스텐보안등주(글로브형)' },
 ];
